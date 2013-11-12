@@ -45,6 +45,21 @@
     <ClCompile Include="src\MyApp.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\COpenglBuffer.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COpenglContext.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COpenglDrawer.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COpenglFactory.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COpenglTexture.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\program\COpenglBaseProgram.h">
@@ -64,6 +79,21 @@
     </ClInclude>
     <ClInclude Include="src\MyApp.h">
       <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COpenglBuffer.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COpenglContext.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COpenglDrawer.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COpenglFactory.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COpenglTexture.h">
+      <Filter>opengl</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

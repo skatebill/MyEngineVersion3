@@ -4,14 +4,20 @@
 #endif
 #include <windows.h>
 #include<gl/glew.h>
+#include<COpenglFactory.h>
+#include<site/site.h>
+#include<service/CFileService.h>
+#pragma comment (lib, "winmm.lib")     /* link with Windows MultiMedia lib */
+#pragma comment (lib, "opengl32.lib")  /* link with Microsoft OpenGL lib */
+#pragma comment (lib, "glu32.lib")     /* link with OpenGL Utility lib */
 namespace temp{
 	HWND hwnd;
-	const char* windowName="";
+	const wchar_t* windowName=L"";
 	CLASS_REG abc;
 	unsigned int width=800;
 	unsigned int height=600;
 
-	void setWindowName(const char* name){
+	void setWindowName(const wchar_t* name){
 		windowName = name;
 	}
 	void setWindowSize(unsigned int w,unsigned int h){
@@ -66,12 +72,19 @@ void create( HINSTANCE hInstance ,int w,int h)
 	int newposx= (screenW>>1)-((rc.right - rc.left)>>1);
 	int newposy= (screenH>>1)-((rc.bottom - rc.top)>>1);
 
-	HWND hwnd = CreateWindow( L"MyWindowClass", L"hello world", styles,
+	temp::hwnd = CreateWindow( L"MyWindowClass", temp::windowName, styles,
 		newposx, newposy, rc.right - rc.left, rc.bottom - rc.top, NULL, NULL, hInstance,
 		NULL );
-	if( !hwnd )
+	if( !temp::hwnd )
 		return;
-	ShowWindow( hwnd, SW_SHOW );
+	temp::abc.setExtra(&temp::hwnd);
+	xc::ISiteEdieable* s=new xc::ISiteEdieable;
+	temp::abc.installSite(xc::shared_ptr<xc::ISite>(s));
+	s->installDrawFactory(xc::shared_ptr<xc::drawBasement::IDrawFactory>(new xc::drawBasement::COpenglFactory));
+	s->installFileService(xc::shared_ptr<xc::fileservice::IFileService>(new xc::fileservice::CFileService));
+
+
+	ShowWindow( temp::hwnd, SW_SHOW );
 }
 
 //--------------------------------------------------------------------------------------
@@ -82,6 +95,7 @@ int WINAPI wWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdL
 {
 	temp::abc.onInitialWindow(temp::setWindowName,temp::setWindowSize);
 	create(hInstance,temp::width,temp::height);
+	temp::abc.onInitialData();
 	MSG msg = {0};
 	while( WM_QUIT != msg.message )
 	{
@@ -92,6 +106,7 @@ int WINAPI wWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdL
 		}
 		else
 		{
+			temp::abc.onRender();
 		}
 
 	}
