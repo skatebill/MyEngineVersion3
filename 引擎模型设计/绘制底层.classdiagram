@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="e41662b7-81b9-47a7-9fa5-85b5bf64244d" name="绘制底层" linkedPackageId="eadb9d38-00dc-4975-9cae-41abff05983a" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="a7eb3192-2495-4a80-ad8e-77cc799d0129" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="a3f25779-7ada-4e58-9fcb-2d404aa4c0f5" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="5cf9ffa6-b158-4fb8-aac2-e530bedc5caf">
+          <propertyInstance Id="dfb6a60b-6c51-43fa-bdb4-b8f44e63422e" name="BaseName">
+            <elementDefinition Id="3d7fa140-ebd8-489c-be49-68c9dfec61e8" />
+          </propertyInstance>
+          <elementDefinition Id="88964336-50bd-415d-97a7-ef746fa1b1cf" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="8934a994-fc9a-4bdb-ba18-3453846f7876">
+          <propertyInstance Id="4987a8e2-722f-42d0-8338-3b33fbe6ff3c" name="ClrAttributes">
+            <elementDefinition Id="4417706e-2af5-43ed-bcab-9c63c7299cc2" />
+          </propertyInstance>
+          <elementDefinition Id="c4d61623-5f5b-4706-81a4-cc3b3e5b2ddd" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="4efb5944-c75e-4cb7-8b07-1b001c9ccaa1">
+          <propertyInstance Id="9c178efd-263c-4d47-bd28-7417aefc50a8" name="Usings">
+            <elementDefinition Id="baaf9566-9cee-4af0-9f8e-af2e1cb5d277" />
+          </propertyInstance>
+          <elementDefinition Id="b2f03199-3b23-4941-bd91-0b77ac7b4a1a" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="d40c227a-c58e-4771-b502-a7ea1c30aa4f" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="caccc03c-2eab-4758-8097-73b258f7c2ad" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="710f0eae-67f8-452a-9291-354f0be8d630">
+          <propertyInstance Id="ffb0fe8e-eace-439f-8702-020a68abf0b4" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="3a7ef885-a816-46b0-a199-b4713088bf0d" />
+          </propertyInstance>
+          <elementDefinition Id="dced9561-adba-4360-a76b-d330b66d48ee" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="3aabc95c-e904-4b3f-be56-d1a7a653d165">
+          <propertyInstance Id="1d20b7a2-fbb8-4033-8413-1a061ae3d352" name="TemplateFilePath" value="ClassTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="6f9c07ff-82a7-495d-b2f3-bc96599b3218" />
+          </propertyInstance>
+          <elementDefinition Id="ac3b7dd2-8425-4b73-b58f-fe196382f7cf" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="76591b08-34ba-48e5-9388-81dacbcc6afe">
+          <propertyInstance Id="ca992b8a-6ec6-496c-9c51-28140a6f24f5" name="ProjectPath" value="ClassTemplate=..\引擎模型设计Lib\引擎模型设计Lib.csproj|EnumTemplate=..\引擎模型设计Lib\引擎模型设计Lib.csproj|InterfaceTemplate=..\引擎模型设计Lib\引擎模型设计Lib.csproj|StructTemplate=..\引擎模型设计Lib\引擎模型设计Lib.csproj">
+            <elementDefinition Id="9de0a590-595d-4d76-b232-4a4ba5ea2025" />
+          </propertyInstance>
+          <elementDefinition Id="3b1235fe-ebd5-4a17-b57b-b382ab0db282" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="2c1445e2-7d36-43cb-9fac-4af27b34274b">
+          <propertyInstance Id="7aac35c8-e8f3-4fdd-a096-f5e8204452f7" name="TargetDirectory" value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+            <elementDefinition Id="680aa0c4-80bc-4192-b928-df042eb00f0f" />
+          </propertyInstance>
+          <elementDefinition Id="15f23d40-e0dc-48f5-b888-c23934a92b4b" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="74ef298f-9a17-4e32-9489-db5fd58283ba">
+          <propertyInstance Id="889bda9f-87a9-49f0-8a26-1c6a15036790" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="afe3ab23-f5bf-4f0c-901b-1d48f1f73a9b" />
+          </propertyInstance>
+          <elementDefinition Id="881f9e7f-0790-4cda-a25c-02972e6d2216" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="b39f8776-2f5e-4617-90d0-a224a7f06ab5">
+          <propertyInstance Id="a8c7c506-24e2-4703-86f8-a42a0f74b253" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+            <elementDefinition Id="1516ccf1-39dc-448e-a593-2ec543256839" />
+          </propertyInstance>
+          <elementDefinition Id="ca0b91e4-4bda-4dc1-9cad-44ead0e1cf74" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="2fcf42f4-6de8-493f-bd72-2b2ebd64fc83">
+          <propertyInstance Id="18d43534-51b6-41ec-8e33-c70428d0a352" name="Parameters">
+            <elementDefinition Id="c2ee4d63-acce-4221-8ac1-e9014f7dd8de" />
+          </propertyInstance>
+          <elementDefinition Id="422337fa-64bc-4f72-bcc5-81729bb21d4b" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="3e6c6d3a-ccaa-47b0-aa09-e75a1d6f36ac" name="drawer3d" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="579219cf-a19c-452d-9097-6111f7b872e7" />
+        <ownedOperations>
+          <operation Id="96d783fb-56d8-4ae3-9d7f-cc83ecf5abc0" name="draw" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="34f02b06-3008-433f-9ef6-29cb318af481" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="edae0e69-d67d-43e3-8c57-667aa66f6302" name="vbuf" direction="In" isUnique="false">
+                  <elementDefinition Id="caf7be7c-8c7b-4610-9634-41e37c391631" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e04cdb78-424c-4ba2-bfb6-3066a66cb969" name="ibuf" direction="In" isUnique="false">
+                  <elementDefinition Id="331f35ee-49d8-4aa5-8a4f-0d83a2e02303" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="230b6376-9a18-42bb-83d8-7f939856c4da" name="drawContext" direction="In" isUnique="false">
+                  <elementDefinition Id="41821d9a-733e-42df-87d4-12667b3abaf1" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="60f415b1-80a6-4a49-a33c-75c8daffaaab" name="attachprogram" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e020ab61-14b9-45fc-bf29-d2ebd86f08b4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="de9d4e95-9a08-4ae6-b12e-a5579f6ec911" name="program" direction="In" isUnique="false">
+                  <elementDefinition Id="d13f4c04-6a7c-4049-bbec-d740f2f3ee3d" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="089cae01-9467-49cc-8240-d319d0332b3e" name="program" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6fe46f07-20f0-4520-b376-b1f883c21251" />
+        <ownedOperations>
+          <operation Id="0f7367fc-1489-4801-8b5e-4f1a437e2efc" name="prepareDraw" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="47cbb886-3565-4d09-826b-21ae07ec87fb" />
+          </operation>
+          <operation Id="6ba9c9df-7f52-4240-ae43-0f5ae5f4579d" name="endDraw" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="eff9f9b6-fb5b-49ab-a381-4f4621a97212" />
+          </operation>
+          <operation Id="0fc8457d-dd76-47d1-bf7f-cafb54f02f49" name="type" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a963aea3-839a-495f-a8fa-7b2cef2e7567" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="f63b1a20-ae8b-42e1-a22f-8086aa42059b" name="drawFactory" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8dc8bbc3-5911-4a0c-b56f-111c551a5dce" />
+        <ownedOperations>
+          <operation Id="d4af4e86-9252-43ad-b9a6-d299e525b2ff" name="program createProgram" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7cafde05-049b-48c2-9adb-da4a19cb8a96" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="62f28ee7-d63b-4f9f-92bb-cb13bb10280b" name="type" direction="In" isUnique="false">
+                  <elementDefinition Id="a27ca1ea-1466-4988-aee8-01e006bff6f8" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0bf1b878-4fda-4ad1-87fd-e78454080450" name="drawer3d createDrawer" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="54fda81f-8760-4b24-b81d-5b73f6803359" />
+          </operation>
+          <operation Id="5a9d4282-7e7f-46ec-a1ad-89bd404f4bc7" name="drwaContext createContext" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2076c564-24b0-44d7-862e-03373c061d59" />
+          </operation>
+          <operation Id="3b3f826f-522e-413b-b4ef-5f4cce120049" name="buf createbuffer" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5dfb2244-9f52-497e-9331-4e770d3c7146" />
+          </operation>
+          <operation Id="d00ba904-638f-4e72-b3d9-552c688d7b62" name="texture createTexture" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3e4be1fd-45c9-4d32-bee2-b079bf96836f" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="e2a73b3e-3fbb-4a77-b5e0-d0479cd42c7d" name="drawContext" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="18e22a25-84c3-4cc8-b48a-17a9b3cadf42" />
+        <ownedOperations>
+          <operation Id="15a1611e-34f5-4d2d-83f9-50d61513a12b" name="presentData" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="38a3f253-ac36-475c-8ea9-4b2e78a96385" />
+          </operation>
+          <operation Id="a38f0e68-bc84-48b9-be61-4dbefcc9b10a" name="getWindowRect" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="407f2833-48c4-4d75-8c5d-3e5fcafb12cd" />
+          </operation>
+          <operation Id="048ed251-c032-42d4-9799-d72ec82e1156" name="setRenderTexture" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a98bd67f-6207-4d88-989e-3a37f3b3565f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="25284f44-de78-4b6e-a058-a148f1d02035" name="rtt" direction="In" isUnique="false">
+                  <elementDefinition Id="80e6faa3-6bb0-4132-841c-76dac85d5d1d" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a7f921e7-6db5-4fdd-a50c-2fd6bde4c0e1" name="clearColor" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8630764f-45a4-4b2a-b1b1-588beb7a6e6a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fef4631c-a9c0-4402-8510-848092eb63e3" name="c" direction="In" isUnique="false">
+                  <elementDefinition Id="18155402-05be-43db-b269-370561667d40" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0260b52b-f2e0-4b57-a10f-0d181c1e1614" name="clearDepth" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="eb75f155-bfa7-4dc6-94ed-4460f96dcb58" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="04f5e483-3ffb-426a-af12-2b30daa10f38" name="drawbuffer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fba48e0d-f338-466a-a4bb-e09cca9d66ec" />
+        <ownedOperations>
+          <operation Id="1dc5c345-d983-48fa-88e3-d17332b4e230" name="lock" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="21344b18-80e6-48ab-bd46-c382d51ee1ce" />
+          </operation>
+          <operation Id="e4d76680-b417-40f8-8a79-541c0a621985" name="size" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="40b27abd-4df0-434f-bba5-b9d0f0c73e9f" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="99083cfc-f9ec-4ebe-989e-b8b8e131201e" name="vbuf" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7b2fe5c5-5a3f-4e3b-929c-0ed1736c8eb8" />
+        <generalsInternal>
+          <generalization Id="7a7d6d72-83e4-4390-8848-69c0c178d263" isSubstitutable="false">
+            <interfaceMoniker Id="04f5e483-3ffb-426a-af12-2b30daa10f38" LastKnownName="drawbuffer" />
+            <elementDefinition Id="ae216ba7-14e3-438b-b4ce-eafd25a02f26" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="89849b3a-d75b-42d5-9727-8f597ccde7a0" name="ibuf" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="efceee45-eab0-4c2d-be54-99552ec36b71" />
+        <generalsInternal>
+          <generalization Id="0167e21b-4c50-4b9b-a292-7c688643b38c" isSubstitutable="false">
+            <interfaceMoniker Id="04f5e483-3ffb-426a-af12-2b30daa10f38" LastKnownName="drawbuffer" />
+            <elementDefinition Id="6f16b872-4201-4fba-9d4c-f03feb004315" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="ab8b88da-bb83-4e82-a1d8-13f7e8e41527" name="renderTexture" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c8519fb4-241b-4129-a7b7-2c28ac60b77f" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="61fc1657-719e-4b4b-a33e-aea9d7c7c937" name="texture" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="734ace5a-183a-4058-9326-d757e0c1c3a9" />
+        <ownedOperations>
+          <operation Id="af74c2c5-e87e-419e-a783-5a1264e15f11" name="getTextureSize" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e2c78576-a81a-45e2-8463-3b2ee684bcae" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="eadb9d38-00dc-4975-9cae-41abff05983a" name="引擎模型设计">
+    <elementDefinition Id="89e13773-7a09-4b85-9932-a5b25d824076" />
+    <profileInstances>
+      <packageHasProfileInstances Id="f29fa509-dad5-463b-8378-81aebd4a1f8e">
+        <profileInstance Id="6294d147-4bec-4dc7-acfa-bc2361fa0332" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="55dfe4aa-b0c7-4a2a-85e3-58bdb09180ce">
+        <profileInstance Id="bd8262d9-54c3-4302-9051-06d7a4c2b65c" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="2a3bf739-2012-4e0d-9099-14b0f9f81d81">
+        <profileInstance Id="61771c67-9d57-41ae-9b36-8a66bad1232f" name="CSharpProfile">
+          <elementDefinition Id="42367f37-f7fe-4573-93ba-5a33c4b91da7" />
+        </profileInstance>
+        <elementDefinition Id="b7caa540-f16d-4161-85d8-25d804ed371c" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="7210ff6a-2aa9-4870-aa2d-3c8bfb186fb0">
+        <profileInstance Id="c6f7199f-8d3c-4f8e-b302-99a4b2605e2e" name="TextTemplateBindings">
+          <elementDefinition Id="876a7d83-db3a-4ac2-85b8-dcec949c4e2a" />
+        </profileInstance>
+        <elementDefinition Id="4d30b776-4c7e-43d0-951d-f642aa4d0fac" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

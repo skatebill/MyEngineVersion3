@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="上层">
+      <UniqueIdentifier>{7d6b37ef-e396-4a48-ac81-79b30e6514a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="组件">
+      <UniqueIdentifier>{ad9994d8-ffcf-47ea-abae-446c4068dfb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service">
+      <UniqueIdentifier>{e7f8ca58-aead-4c32-99b1-4f5d884a7a2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="绘制底层">
+      <UniqueIdentifier>{53d8e82a-2498-403d-bf61-63dbe0f1fdbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="应用层">
+      <UniqueIdentifier>{b51feef4-57a1-4095-9a6f-f2742fb03a72}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\tools\listener.hpp">
+      <Filter>组件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\tools\objContainer.hpp">
+      <Filter>组件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\tools\XCBuffers.hpp">
+      <Filter>组件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\IDrawer3D.h">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\IDrawProgram.h">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\IDrawBuffers.h">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\IDrawContext.h">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\tools\MyTypes.h">
+      <Filter>组件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\IDrawTexture.h">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\IDrawFactory.h">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\service\file\IFileService.h">
+      <Filter>service</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\service\file\IImage.h">
+      <Filter>service</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\tools\dllCfg.h">
+      <Filter>组件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\application\IApplication.h">
+      <Filter>应用层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\application\appTypes.h">
+      <Filter>应用层</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
