@@ -59,7 +59,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)/libs;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;glut32.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32.lib;glew32s.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -80,11 +80,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\COpenglBuffer.cpp" />
-    <ClCompile Include="src\COpenglContext.cpp" />
-    <ClCompile Include="src\COpenglDrawer.cpp" />
-    <ClCompile Include="src\COpenglFactory.cpp" />
-    <ClCompile Include="src\COpenglTexture.cpp" />
+    <ClCompile Include="src\MyApp.cpp" />
     <ClCompile Include="src\program\COpenglBaseProgram.cpp" />
     <ClCompile Include="src\program\COpenglProgram.cpp" />
     <ClCompile Include="src\program\COpenglProgramFactory.cpp" />
@@ -93,11 +89,7 @@
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\COpenglBuffer.h" />
-    <ClInclude Include="src\COpenglContext.h" />
-    <ClInclude Include="src\COpenglDrawer.h" />
-    <ClInclude Include="src\COpenglFactory.h" />
-    <ClInclude Include="src\COpenglTexture.h" />
+    <ClInclude Include="src\MyApp.h" />
     <ClInclude Include="src\program\COpenglBaseProgram.h" />
     <ClInclude Include="src\program\COpenglProgram.h" />
     <ClInclude Include="src\program\COpenglProgramFactory.h" />

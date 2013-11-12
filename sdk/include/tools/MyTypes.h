@@ -10,6 +10,7 @@ namespace xc{
 
 	typedef irr::core::vector2df vector2df;
 	typedef irr::core::vector2d<double> vector2dd;
+	typedef irr::core::vector2d<int> vector2di;
 
 	typedef irr::core::CMatrix4<float> mat4f;
 	typedef irr::core::CMatrix4<double> mat4d;

@@ -27,23 +27,11 @@
     <ClCompile Include="winmain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\COpenglContext.cpp">
-      <Filter>opengl</Filter>
-    </ClCompile>
-    <ClCompile Include="src\COpenglDrawer.cpp">
-      <Filter>opengl</Filter>
-    </ClCompile>
-    <ClCompile Include="src\COpenglBuffer.cpp">
-      <Filter>opengl</Filter>
-    </ClCompile>
     <ClCompile Include="src\program\COpenglProgram.cpp">
       <Filter>opengl\program</Filter>
     </ClCompile>
     <ClCompile Include="src\program\COpenglBaseProgram.cpp">
       <Filter>opengl\program</Filter>
-    </ClCompile>
-    <ClCompile Include="src\COpenglTexture.cpp">
-      <Filter>opengl</Filter>
     </ClCompile>
     <ClCompile Include="src\service\CFreeImage.cpp">
       <Filter>service</Filter>
@@ -51,34 +39,19 @@
     <ClCompile Include="src\service\CFileService.cpp">
       <Filter>service</Filter>
     </ClCompile>
-    <ClCompile Include="src\COpenglFactory.cpp">
-      <Filter>opengl</Filter>
-    </ClCompile>
     <ClCompile Include="src\program\COpenglProgramFactory.cpp">
       <Filter>opengl\program</Filter>
     </ClCompile>
+    <ClCompile Include="src\MyApp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\COpenglContext.h">
-      <Filter>opengl</Filter>
-    </ClInclude>
-    <ClInclude Include="src\COpenglDrawer.h">
-      <Filter>opengl</Filter>
-    </ClInclude>
-    <ClInclude Include="src\COpenglBuffer.h">
-      <Filter>opengl</Filter>
-    </ClInclude>
     <ClInclude Include="src\program\COpenglBaseProgram.h">
       <Filter>opengl\program</Filter>
     </ClInclude>
     <ClInclude Include="src\program\COpenglProgram.h">
       <Filter>opengl\program</Filter>
-    </ClInclude>
-    <ClInclude Include="src\COpenglTexture.h">
-      <Filter>opengl</Filter>
-    </ClInclude>
-    <ClInclude Include="src\COpenglFactory.h">
-      <Filter>opengl</Filter>
     </ClInclude>
     <ClInclude Include="src\service\CFreeImage.h">
       <Filter>service</Filter>
@@ -88,6 +61,9 @@
     </ClInclude>
     <ClInclude Include="src\program\COpenglProgramFactory.h">
       <Filter>opengl\program</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MyApp.h">
+      <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

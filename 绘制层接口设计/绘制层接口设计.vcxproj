@@ -82,6 +82,7 @@
   <ItemGroup>
     <ClInclude Include="..\sdk\include\application\IApplication.h" />
     <ClInclude Include="..\sdk\include\application\appTypes.h" />
+    <ClInclude Include="..\sdk\include\application\paltform\windows.h" />
     <ClInclude Include="..\sdk\include\drawBasement\IDrawBuffers.h" />
     <ClInclude Include="..\sdk\include\drawBasement\IDrawContext.h" />
     <ClInclude Include="..\sdk\include\drawBasement\IDrawer3D.h" />
@@ -90,6 +91,7 @@
     <ClInclude Include="..\sdk\include\drawBasement\IDrawTexture.h" />
     <ClInclude Include="..\sdk\include\service\file\IFileService.h" />
     <ClInclude Include="..\sdk\include\service\file\IImage.h" />
+    <ClInclude Include="..\sdk\include\site\site.h" />
     <ClInclude Include="..\sdk\include\tools\dllCfg.h" />
     <ClInclude Include="..\sdk\include\tools\listener.hpp" />
     <ClInclude Include="..\sdk\include\tools\MyTypes.h" />

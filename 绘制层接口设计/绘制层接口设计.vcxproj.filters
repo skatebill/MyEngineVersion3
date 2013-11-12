@@ -28,6 +28,12 @@
     <Filter Include="应用层">
       <UniqueIdentifier>{b51feef4-57a1-4095-9a6f-f2742fb03a72}</UniqueIdentifier>
     </Filter>
+    <Filter Include="应用层\application">
+      <UniqueIdentifier>{c737a4b0-7bda-43f2-bd26-2c975dd412ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="应用层\site">
+      <UniqueIdentifier>{b491ca8c-44f4-4bb4-abc4-6ea06110c08b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -78,11 +84,17 @@
     <ClInclude Include="..\sdk\include\tools\dllCfg.h">
       <Filter>组件</Filter>
     </ClInclude>
-    <ClInclude Include="..\sdk\include\application\IApplication.h">
-      <Filter>应用层</Filter>
-    </ClInclude>
     <ClInclude Include="..\sdk\include\application\appTypes.h">
-      <Filter>应用层</Filter>
+      <Filter>应用层\application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\application\IApplication.h">
+      <Filter>应用层\application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\application\paltform\windows.h">
+      <Filter>应用层\application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\site\site.h">
+      <Filter>应用层\site</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
