@@ -13,7 +13,7 @@ namespace xc{
 			//! 创建指定类型的着色器
 			virtual IProgramFactory* getProgramFactory()=0;
 			//! 创建绘制器
-			virtual shared_ptr<IDrawer3D> createDrawer()=0;
+			virtual shared_ptr<IDrawer3D> createDrawer(shared_ptr<IDrawCotext> context)=0;
 			//! 创建顶点缓冲区
 			virtual shared_ptr<IDrawBuffer> createVertexBuffer()=0;
 			//! 创建索引缓冲区

@@ -3,8 +3,10 @@
 #include <MyTypes.h>
 #include<site/site.h>
 #include<functional>
+
 namespace xc{
 	namespace app{
+		static const int rongcha = 3;
 		class IApplication{
 		private:
 			shared_ptr<ISite> mSite;
@@ -23,14 +25,14 @@ namespace xc{
 			void setExtra(void* ex){
 				m_Extra = ex;
 			}
-
+			void exitApp();
 			//////////////////////////////////////////////////////////////////////////
 			//	接口
 			//  UI 事件
 			//! 初始化窗口信息
 			virtual void onInitialWindow(std::function<void(const wchar_t*)> namefun,std::function<void(unsigned int,unsigned int)> sizeFun)=0;
 			//! 鼠标事件
-			virtual void onMouseEvent(EnumMouse mouse,MouseEvent event,vector2di pos)=0;
+			virtual void onMouseEvent(EnumMouse,MouseEvent,vector2di)=0;
 			//! 键盘事件
 			virtual void onKeyEvent(KeyEvent key,int keyCode)=0;
 			//! 初始化

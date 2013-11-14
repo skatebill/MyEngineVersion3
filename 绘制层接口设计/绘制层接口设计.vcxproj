@@ -47,7 +47,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -92,15 +92,23 @@
     <ClInclude Include="..\sdk\include\service\file\IFileService.h" />
     <ClInclude Include="..\sdk\include\service\file\IImage.h" />
     <ClInclude Include="..\sdk\include\site\site.h" />
+    <ClInclude Include="..\sdk\include\tools\Clistener.hpp" />
+    <ClInclude Include="..\sdk\include\tools\CobjContainer.hpp" />
     <ClInclude Include="..\sdk\include\tools\dllCfg.h" />
-    <ClInclude Include="..\sdk\include\tools\listener.hpp" />
+    <ClInclude Include="..\sdk\include\tools\Ilistener.hpp" />
+    <ClInclude Include="..\sdk\include\tools\IobjContainer.hpp" />
     <ClInclude Include="..\sdk\include\tools\MyTypes.h" />
-    <ClInclude Include="..\sdk\include\tools\objContainer.hpp" />
     <ClInclude Include="..\sdk\include\tools\XCBuffers.hpp" />
+    <ClInclude Include="..\sdk\include\viewer\CViewFactory.hpp" />
+    <ClInclude Include="..\sdk\include\viewer\ICamera.h" />
+    <ClInclude Include="..\sdk\include\viewer\IMatrixStack.h" />
+    <ClInclude Include="..\sdk\include\viewer\IViewFactory.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\sdk\include\viewer\CCamera.hpp" />
+    <ClCompile Include="..\sdk\include\viewer\CMatStack.hpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

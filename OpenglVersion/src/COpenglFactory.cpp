@@ -17,8 +17,8 @@ namespace xc{
 			return m_ProgramFactory.get();
 		}
 		//! 创建绘制器
-		shared_ptr<IDrawer3D> COpenglFactory::createDrawer(){
-			return shared_ptr<IDrawer3D>(new COpenglDrawer);
+		shared_ptr<IDrawer3D> COpenglFactory::createDrawer(shared_ptr<IDrawCotext> context){
+			return shared_ptr<IDrawer3D>(new COpenglDrawer(context));
 		}
 		//! 创建顶点缓冲区
 		shared_ptr<IDrawBuffer> COpenglFactory::createVertexBuffer(){

@@ -3,7 +3,7 @@
 namespace xc{
 	namespace drawBasement{
 
-		void COpenglDrawer::draw(IDrawBuffer* vbuf,IDrawIndexBuffer* ibuf,IDrawCotext* context){
+		void COpenglDrawer::draw(IDrawBuffer* vbuf,IDrawIndexBuffer* ibuf){
 			vbuf->use(0);
 			ibuf->use();
 			GLenum type;

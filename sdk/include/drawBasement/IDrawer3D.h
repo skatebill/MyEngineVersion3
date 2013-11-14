@@ -14,10 +14,10 @@ namespace xc{
 		public:
 			//! 指定绘制用的program 
 			//! 绘制指定物体
-			virtual void draw(IDrawBuffer* vbuf,IDrawIndexBuffer* ibuf,IDrawCotext* context)=0;
+			virtual void draw(IDrawBuffer* vbuf,IDrawIndexBuffer* ibuf)=0;
 			//! 绘制指定物体
-			void draw(shared_ptr<IDrawBuffer> vbuf,shared_ptr<IDrawIndexBuffer> ibuf,shared_ptr<IDrawCotext> context){
-				draw(vbuf.get(),ibuf.get(),context.get());
+			void draw(shared_ptr<IDrawBuffer> vbuf,shared_ptr<IDrawIndexBuffer> ibuf){
+				draw(vbuf.get(),ibuf.get());
 			}
 		};
 	}

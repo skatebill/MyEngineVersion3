@@ -5,6 +5,7 @@ namespace xc{
 		class myapp:public xc::app::IApplication{
 		private:
 			shared_ptr<drawBasement::IDrawCotext> m_Context;
+			colorf mScreenColor;
 		public:
 			//////////////////////////////////////////////////////////////////////////
 			//	½Ó¿Ú

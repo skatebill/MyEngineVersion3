@@ -34,6 +34,9 @@
     <Filter Include="应用层\site">
       <UniqueIdentifier>{b491ca8c-44f4-4bb4-abc4-6ea06110c08b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Viewer">
+      <UniqueIdentifier>{3b12851a-ed4c-45ea-adb8-c584246e7ef2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -44,12 +47,6 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\sdk\include\tools\listener.hpp">
-      <Filter>组件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\sdk\include\tools\objContainer.hpp">
-      <Filter>组件</Filter>
     </ClInclude>
     <ClInclude Include="..\sdk\include\tools\XCBuffers.hpp">
       <Filter>组件</Filter>
@@ -93,6 +90,30 @@
     <ClInclude Include="..\sdk\include\application\paltform\windows.h">
       <Filter>应用层\application</Filter>
     </ClInclude>
+    <ClInclude Include="..\sdk\include\tools\Ilistener.hpp">
+      <Filter>组件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\tools\IobjContainer.hpp">
+      <Filter>组件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\tools\Clistener.hpp">
+      <Filter>组件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\tools\CobjContainer.hpp">
+      <Filter>组件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\viewer\ICamera.h">
+      <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\viewer\IMatrixStack.h">
+      <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\viewer\IViewFactory.h">
+      <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\viewer\CViewFactory.hpp">
+      <Filter>Viewer</Filter>
+    </ClInclude>
     <ClInclude Include="..\sdk\include\site\site.h">
       <Filter>应用层\site</Filter>
     </ClInclude>
@@ -103,6 +124,12 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk\include\viewer\CCamera.hpp">
+      <Filter>Viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk\include\viewer\CMatStack.hpp">
+      <Filter>Viewer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
