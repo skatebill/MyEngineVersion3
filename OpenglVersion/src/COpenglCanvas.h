@@ -22,7 +22,8 @@ namespace xc{
 			}
 			//! 指定绘制用的program 
 			//! 绘制指定物体
-			virtual void draw(IDrawBuffer* vbuf,IDrawIndexBuffer* ibuf);
+			virtual void render(IDrawBuffer* vbuf,IDrawIndexBuffer* ibuf);
+			virtual void render(IDrawVertexBufferOBject* vbo);
 
 			//! 设置投影方式
 			virtual void setProjectionType(EnumProjectionType type,float perspective_angle){

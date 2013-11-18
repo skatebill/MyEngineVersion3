@@ -1,6 +1,8 @@
 #pragma once
 #include<IDrawBuffers.h>
 #include<gl/glew.h>
+#include <vector>
+#include<MyTypes.h>
 namespace xc{
 	namespace drawBasement{
 		class COpenglBuffer:public IDrawBuffer{
@@ -42,6 +44,7 @@ namespace xc{
 			EnumIndexType m_EIT;
 		public:
 			explicit COpenglIndexBuffer();
+			~COpenglIndexBuffer();
 			//! 在指定位置使用此缓冲
 			virtual void use();
 			//! 初始化缓冲区
@@ -83,6 +86,33 @@ namespace xc{
 			virtual void unUse(){
 				
 			}
+		};
+		class COpenglVertexBufferObject:public IDrawVertexBufferOBject{
+		private:
+			std::vector<shared_ptr<IDrawBuffer>> m_vertexList;
+			shared_ptr<IDrawIndexBuffer> m_indexBuffer;
+			GLuint m_VBO;
+		public:
+			COpenglVertexBufferObject();
+			~COpenglVertexBufferObject();
+			//! 开始初始化
+			void initialStart();
+			//! 结束初始化
+			void initialEnd();
+			//! 绑定顶点缓冲
+			void addVertexBuf(shared_ptr<IDrawBuffer> vbuf);
+			//! 绑定索引缓冲
+			void bindIndexBuf(shared_ptr<IDrawIndexBuffer> ibuf);
+			//! 使用此缓冲区
+			virtual void use();
+			//! 使用完毕
+			virtual void unUse();
+			//! 获取需要绘制的索引个数
+			virtual unsigned int getIndexNums();
+			//! 获取需要绘制的图元类型
+			virtual EnumPrimityType getPrimityType();
+			//! 获取数据类型
+			virtual EnumIndexType getIndexType();
 		};
 	}
 }

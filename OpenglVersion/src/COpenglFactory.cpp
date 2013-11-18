@@ -37,5 +37,24 @@ namespace xc{
 			HWND* h = (HWND*)data;
 			return shared_ptr<IDrawCotext>(new COpenglContext(*h));
 		}
+
+		//! 创建绘制用VBO
+		shared_ptr<IDrawVertexBufferOBject> COpenglFactory::createVertexBufferObject(shared_ptr<IDrawBuffer> vbuf,
+			shared_ptr<IDrawIndexBuffer> ibuf,
+			shared_ptr<IDrawBuffer> buf1,
+			shared_ptr<IDrawBuffer> buf2,
+			shared_ptr<IDrawBuffer> buf3,
+			shared_ptr<IDrawBuffer> buf4){
+				COpenglVertexBufferObject* r = new COpenglVertexBufferObject;
+				r->initialStart();
+				r->addVertexBuf(vbuf);
+				r->bindIndexBuf(ibuf);
+				if(buf1!=0) r->addVertexBuf(buf1);
+				if(buf2!=0) r->addVertexBuf(buf2);
+				if(buf3!=0) r->addVertexBuf(buf3);
+				if(buf4!=0) r->addVertexBuf(buf4);
+				r->initialEnd();
+				return shared_ptr<IDrawVertexBufferOBject>(r);
+		}
 	}
 }

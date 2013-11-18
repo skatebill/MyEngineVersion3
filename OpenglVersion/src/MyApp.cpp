@@ -172,6 +172,39 @@ namespace xc{
 			string filename = f->getAbsolutePath();
 			auto fsize = f->getFileSize();
 			string name = f->getFileName();
+
+			m_VBO =this->getSite()->getDrawFactory()->createVertexBufferObject(mVertex,mIndex,mtex);
+
+			mProg2 = this->getSite()->getDrawFactory()->getProgramFactory()->createBaseQuickProgram();
+
+			auto index = this->getSite()->getDrawFactory()->createIndexBuffer();
+			auto vertex = this->getSite()->getDrawFactory()->createVertexBuffer();
+			vertex->reSizeBuffer(sizeof(vector3df)*8);
+			vertex->setElemtSize(3);
+			vbuf = (vector3df*)vertex->lock();
+
+			vbuf[0] = vector3df(-1,-1,0);
+			vbuf[1] = vector3df(1,-1,0);
+			vbuf[2] = vector3df(1,1,0);
+			vbuf[3] = vector3df(-1,1,0);
+			vertex->initialBuffer();
+
+			index->reSizeBuffer(6);
+			index->setIndexNums(6);
+			index->setPrimityType(drawBasement::EPT_TRIANGLES);
+			ibuf = (unsigned char*)index->lock();
+			i=0;
+			ibuf[i++]=0;
+			ibuf[i++]=1;
+			ibuf[i++]=2;
+
+			ibuf[i++]=0;
+			ibuf[i++]=2;
+			ibuf[i++]=3;
+
+			index->initialBuffer();
+			m_VBO2 =this->getSite()->getDrawFactory()->createVertexBufferObject(vertex,index);
+
 		}
 		//! Ïú»Ù
 		void myapp::onCleanup(){
@@ -182,14 +215,29 @@ namespace xc{
 			m_Context->clearScreenColor(mScreenColor);
 			m_Context->clearDepthBuffer();
 			mProg->prepareDraw();
+			mCanvas->getMatStack()->push();
+			mCanvas->getMatStack()->translate(vector3df(-1,0,0));
 			mat4 w=mCanvas->getWorldTranslateMatrix();
 			mat4 v=mCanvas->getViewMatrix();
 			mat4 p=mCanvas->getProjectionMatrix();
 			mProg->uploadMatrix(p*v*w);
 			mProg->uploadTexture(mtexture.get());
-			mtex->use(1);
-			mCanvas->draw(mVertex,mIndex);
+			mCanvas->render(m_VBO);
 			mProg->endDraw();
+			mCanvas->getMatStack()->pop();
+
+			mCanvas->getMatStack()->push();
+			mCanvas->getMatStack()->translate(vector3df(1,0,0));
+			mProg2->prepareDraw();
+			mProg2->uploadColor(colorf(1,1,0,1));
+			w=mCanvas->getWorldTranslateMatrix();
+			v=mCanvas->getViewMatrix();
+			p=mCanvas->getProjectionMatrix();
+			mProg2->uploadMatrix(p*v*w);
+
+			mCanvas->render(m_VBO2);
+			mProg2->endDraw();
+			mCanvas->getMatStack()->pop();
 			m_Context->presentData();
 		}
 	}

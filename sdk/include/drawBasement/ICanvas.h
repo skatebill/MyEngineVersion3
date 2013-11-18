@@ -33,12 +33,16 @@ namespace xc{
 			virtual mat4 getWorldTranslateMatrix()=0;
 			//! 获取矩阵变化器
 			virtual viewer::IMatStack* getMatStack()=0;
-			//! 指定绘制用的program 
 			//! 绘制指定物体
-			virtual void draw(IDrawBuffer* vbuf,IDrawIndexBuffer* ibuf)=0;
+			virtual void render(IDrawBuffer* vbuf,IDrawIndexBuffer* ibuf)=0;
+			virtual void render(IDrawVertexBufferOBject* vbo)=0;
+			//////////////////////////////////////////////////////////////////////////
 			//! 绘制指定物体
-			void draw(shared_ptr<IDrawBuffer> vbuf,shared_ptr<IDrawIndexBuffer> ibuf){
-				draw(vbuf.get(),ibuf.get());
+			void render(shared_ptr<IDrawBuffer> vbuf,shared_ptr<IDrawIndexBuffer> ibuf){
+				render(vbuf.get(),ibuf.get());
+			}
+			void render(shared_ptr<IDrawVertexBufferOBject> vbo){
+				render(vbo.get());
 			}
 		};
 	}

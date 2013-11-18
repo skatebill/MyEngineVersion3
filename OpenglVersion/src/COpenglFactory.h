@@ -20,7 +20,13 @@ namespace xc{
 			virtual IDrawTextureFactory* getTextureFactory();
 			//! 创建绘制上下文
 			virtual shared_ptr<IDrawCotext> createDrawContext(void* data);
-
+			//! 创建绘制用VBO
+			virtual shared_ptr<IDrawVertexBufferOBject> createVertexBufferObject(shared_ptr<IDrawBuffer> vbuf,
+				shared_ptr<IDrawIndexBuffer> ibuf,
+				shared_ptr<IDrawBuffer> buf1=0,
+				shared_ptr<IDrawBuffer> buf2=0,
+				shared_ptr<IDrawBuffer> buf3=0,
+				shared_ptr<IDrawBuffer> buf4=0);
 		};
 	}
 }

@@ -10,9 +10,12 @@ namespace xc{
 			shared_ptr<drawBasement::IDrawBuffer> mtex;
 			shared_ptr<drawBasement::IDrawIndexBuffer> mIndex;
 			shared_ptr<drawBasement::IBasedTextureProgramQ> mProg;
+			shared_ptr<drawBasement::IBaseProgramQ> mProg2;
 			shared_ptr<drawBasement::ICanvas> mCanvas;
 			shared_ptr<viewer::ICamera> mCamera;
 			shared_ptr<drawBasement::IDrawTexture2D> mtexture;
+			shared_ptr<xc::drawBasement::IDrawVertexBufferOBject> m_VBO;
+			shared_ptr<xc::drawBasement::IDrawVertexBufferOBject> m_VBO2;
 		public:
 			//////////////////////////////////////////////////////////////////////////
 			//	½Ó¿Ú
