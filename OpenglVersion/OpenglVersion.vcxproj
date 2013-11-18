@@ -53,7 +53,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)/sdk/include;$(SolutionDir)/sdk/include/irrlich;$(SolutionDir)/sdk/include/tools;$(SolutionDir)/sdk/include/drawBasement;$(SolutionDir)/libs;$(ProjectDir)/src/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/sdk/include;$(SolutionDir)/libs/irrlich;$(SolutionDir)/sdk/include/tools;$(SolutionDir)/sdk/include/drawBasement;$(SolutionDir)/libs;$(ProjectDir)/src/</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -82,7 +82,7 @@
   <ItemGroup>
     <ClCompile Include="src\COpenglBuffer.cpp" />
     <ClCompile Include="src\COpenglContext.cpp" />
-    <ClCompile Include="src\COpenglDrawer.cpp" />
+    <ClCompile Include="src\COpenglCanvas.cpp" />
     <ClCompile Include="src\COpenglFactory.cpp" />
     <ClCompile Include="src\COpenglTexture.cpp" />
     <ClCompile Include="src\MyApp.cpp" />
@@ -96,13 +96,15 @@
   <ItemGroup>
     <ClInclude Include="src\COpenglBuffer.h" />
     <ClInclude Include="src\COpenglContext.h" />
-    <ClInclude Include="src\COpenglDrawer.h" />
+    <ClInclude Include="src\COpenglCanvas.h" />
     <ClInclude Include="src\COpenglFactory.h" />
     <ClInclude Include="src\COpenglTexture.h" />
     <ClInclude Include="src\MyApp.h" />
-    <ClInclude Include="src\program\COpenglBaseProgram.h" />
+    <ClInclude Include="src\program\COpenglBaseProgram.hpp" />
     <ClInclude Include="src\program\COpenglProgram.h" />
     <ClInclude Include="src\program\COpenglProgramFactory.h" />
+    <ClInclude Include="src\program\COpenglTexturedProgram.hpp" />
+    <ClInclude Include="src\service\CFile.hpp" />
     <ClInclude Include="src\service\CFileService.h" />
     <ClInclude Include="src\service\CFreeImage.h" />
   </ItemGroup>

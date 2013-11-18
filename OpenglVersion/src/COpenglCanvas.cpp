@@ -1,9 +1,9 @@
-#include "COpenglDrawer.h"
+#include "COpenglCanvas.h"
 #include <gl\glew.h>
 namespace xc{
 	namespace drawBasement{
 
-		void COpenglDrawer::draw(IDrawBuffer* vbuf,IDrawIndexBuffer* ibuf){
+		void COpenglCanvas::draw(IDrawBuffer* vbuf,IDrawIndexBuffer* ibuf){
 			vbuf->use(0);
 			ibuf->use();
 			GLenum type;

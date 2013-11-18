@@ -9,6 +9,8 @@ namespace xc{
 	namespace viewer{
 		class ICamera{
 		public:
+			//! 获取视界变化矩阵
+			virtual mat4 getViewMatrix()=0;
 			//! 沿着 x 轴转动
 			virtual void roll(float angle)=0;
 			//! 沿着 y 轴转动

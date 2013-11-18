@@ -13,7 +13,7 @@ namespace xc{
 			return m_TextureSize;
 		}
 		//! Ê¹ÓÃÎÆÀí
-		void COpenglTexture::use(GLuint pos){
+		void COpenglTexture::use(int pos){
 			glActiveTexture(GL_TEXTURE0+pos);
 			glBindTexture(GL_TEXTURE_2D,m_TextureHandle);
 		}
@@ -41,7 +41,8 @@ namespace xc{
 			tex->setTextureSize(rect(0,0,image->getWitdh(),image->getHeight()));
 			tex->use(0);
 			GLuint colorType=GL_RGB;
-			if(image->hasAlpha()) colorType=GL_RGBA;
+			if(image->hasAlpha()) 
+				colorType=GL_RGBA;
 			glTexImage2D(GL_TEXTURE_2D,0,colorType,image->getWitdh(),image->getHeight(),0,colorType,GL_UNSIGNED_BYTE,image->getData());
 			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);

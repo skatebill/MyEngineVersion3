@@ -1,7 +1,7 @@
 #include "COpenglFactory.h"
 #include"COpenglContext.h"
 #include"program/COpenglProgramFactory.h"
-#include"COpenglDrawer.h"
+#include"COpenglCanvas.h"
 #include"COpenglBuffer.h"
 #include"COpenglTexture.h"
 namespace xc{
@@ -17,8 +17,8 @@ namespace xc{
 			return m_ProgramFactory.get();
 		}
 		//! 创建绘制器
-		shared_ptr<IDrawer3D> COpenglFactory::createDrawer(shared_ptr<IDrawCotext> context){
-			return shared_ptr<IDrawer3D>(new COpenglDrawer(context));
+		shared_ptr<ICanvas> COpenglFactory::createCanvas(shared_ptr<IDrawCotext> context,shared_ptr<viewer::IMatStack> matStack){
+			return shared_ptr<ICanvas>(new COpenglCanvas(context,matStack));
 		}
 		//! 创建顶点缓冲区
 		shared_ptr<IDrawBuffer> COpenglFactory::createVertexBuffer(){

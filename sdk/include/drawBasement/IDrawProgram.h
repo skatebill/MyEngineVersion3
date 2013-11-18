@@ -44,10 +44,12 @@ namespace xc{
 			virtual void uploadColor(colorf c)=0;
 		};
 
-		class IBasedTextureProgramQ:public IBaseProgramQ{
+		class IBasedTextureProgramQ:public IDrawProgram{
 		public:
 			//! 上传纹理
 			virtual void uploadTexture(IDrawTexture2D* tex)=0;
+			//! 上传变换矩阵
+			virtual void uploadMatrix(mat4f mat)=0;
 		};
 
 		class IProgramFactory{

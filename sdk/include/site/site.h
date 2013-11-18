@@ -10,6 +10,8 @@ namespace xc{
 		virtual shared_ptr<drawBasement::IDrawFactory> getDrawFactory()=0;
 		//! 获取文件服务
 		virtual shared_ptr<fileservice::IFileService> getFileService()=0;
+		//! 获取View工厂
+		virtual shared_ptr<viewer::IViewerFactory> getViewerFactory()=0;
 	};
 	class ISiteEdieable:public ISite{
 	private:

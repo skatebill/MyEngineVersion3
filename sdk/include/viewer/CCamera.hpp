@@ -18,12 +18,18 @@ namespace xc{
 
 			mat4 temp;
 			vector3df tempv;
-
+			mat4 mViewMatrix;
 		public:
 			CCamera(){
 				mForwad = vector3df(0,0,-1);
 				mUp = vector3df(0,1,0);
 				mRight = vector3df(1,0,0);
+				mChanged=true;
+			}
+			//! 获取视界变化矩阵
+			virtual mat4 getViewMatrix(){
+				mViewMatrix.buildCameraLookAtMatrixRH(mPos,mPos+mForwad,mUp);
+				return mViewMatrix;
 			}
 			inline void setChanged(){
 				mChanged = true;
@@ -92,6 +98,7 @@ namespace xc{
 			}
 			//! 设置摄像机位置
 			virtual void setCamera(vector3df pos,vector3df lookat,vector3df upDir=vector3df(0,1,0)){
+				setChanged();
 				mPos = pos;
 				mForwad = lookat - pos;
 				mForwad.normalize();

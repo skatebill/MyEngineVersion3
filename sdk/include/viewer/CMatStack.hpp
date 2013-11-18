@@ -16,6 +16,10 @@ namespace xc{
 			CMatStack(){
 				reSet();
 			}
+			//! 获取当前矩阵
+			virtual mat4 getWorldTransMat(){
+				return mCurMat;
+			}
 			//! 压栈当前矩阵
 			virtual void push(){
 				mMatStack.push(mCurMat);

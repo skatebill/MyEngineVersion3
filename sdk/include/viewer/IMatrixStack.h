@@ -22,6 +22,8 @@ namespace xc{
 			virtual void scale(vector3df s)=0;
 			//! 重置矩阵
 			virtual void reSet()=0;
+			//! 获取当前矩阵
+			virtual mat4 getWorldTransMat()=0;
 		};
 	}
 }

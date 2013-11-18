@@ -1,9 +1,9 @@
 #pragma once
-#include<rect.h>
-#include<matrix4.h>
-#include<irrString.h>
-#include<Scolor.h>
 #include<memory>
+#include"rect.h"
+#include"matrix4.h"
+#include"irrString.h"
+#include"Scolor.h"
 namespace xc{
 	typedef irr::core::vector3df vector3df;
 	typedef irr::core::vector3d<double> vector3dd;
@@ -34,6 +34,6 @@ namespace xc{
 	typedef unsigned char u8;
 
 	using std::shared_ptr;
-	
+
 
 }

@@ -85,10 +85,11 @@
     <ClInclude Include="..\sdk\include\application\paltform\windows.h" />
     <ClInclude Include="..\sdk\include\drawBasement\IDrawBuffers.h" />
     <ClInclude Include="..\sdk\include\drawBasement\IDrawContext.h" />
-    <ClInclude Include="..\sdk\include\drawBasement\IDrawer3D.h" />
+    <ClInclude Include="..\sdk\include\drawBasement\ICanvas.h" />
     <ClInclude Include="..\sdk\include\drawBasement\IDrawFactory.h" />
     <ClInclude Include="..\sdk\include\drawBasement\IDrawProgram.h" />
     <ClInclude Include="..\sdk\include\drawBasement\IDrawTexture.h" />
+    <ClInclude Include="..\sdk\include\service\file\IFile.h" />
     <ClInclude Include="..\sdk\include\service\file\IFileService.h" />
     <ClInclude Include="..\sdk\include\service\file\IImage.h" />
     <ClInclude Include="..\sdk\include\site\site.h" />

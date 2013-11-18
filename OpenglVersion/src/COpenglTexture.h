@@ -13,7 +13,7 @@ namespace xc{
 			//! 获取纹理大小
 			virtual rect getTextureSize();
 			//! 使用纹理
-			void use(GLuint pos);
+			void use(int pos);
 			//! 使用完毕
 			void unUse();
 			//! 设置纹理大小

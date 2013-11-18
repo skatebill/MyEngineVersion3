@@ -66,5 +66,19 @@ namespace xc{
 			//! 获取数据类型
 			virtual EnumIndexType getIndexType()=0;
 		};
+
+		class IDrawVertexBufferOBject{
+		public:
+			//! 开始初始化
+			virtual void initialStart()=0;
+			//! 结束初始化
+			virtual void initialEnd()=0;
+			//! 绑定顶点缓冲
+			virtual void bindVertexBuf(shared_ptr<IDrawBuffer> vbuf,unsigned int slot)=0;
+			//! 绑定索引缓冲
+			virtual void bindIndexBuf(shared_ptr<IDrawIndexBuffer> ibuf)=0;
+			//! 使用此缓冲区
+			virtual void use()=0;
+		};
 	}
 }

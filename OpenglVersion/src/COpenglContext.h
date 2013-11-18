@@ -16,6 +16,10 @@ namespace xc{
 			explicit COpenglContext(HWND hwnd);
 			~COpenglContext();
 
+			//! 获取坐标系类型
+			virtual EnumCoordinateType getCoordinateType(){
+				return RIGHT_HAND;
+			}
 			//! 清空深度缓存
 			virtual void clearDepthBuffer();
 			//! 清空屏幕颜色

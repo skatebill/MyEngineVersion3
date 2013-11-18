@@ -51,9 +51,6 @@
     <ClInclude Include="..\sdk\include\tools\XCBuffers.hpp">
       <Filter>组件</Filter>
     </ClInclude>
-    <ClInclude Include="..\sdk\include\drawBasement\IDrawer3D.h">
-      <Filter>绘制底层</Filter>
-    </ClInclude>
     <ClInclude Include="..\sdk\include\drawBasement\IDrawProgram.h">
       <Filter>绘制底层</Filter>
     </ClInclude>
@@ -116,6 +113,12 @@
     </ClInclude>
     <ClInclude Include="..\sdk\include\site\site.h">
       <Filter>应用层\site</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\ICanvas.h">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\service\file\IFile.h">
+      <Filter>service</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

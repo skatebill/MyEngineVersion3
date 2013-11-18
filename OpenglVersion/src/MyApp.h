@@ -6,6 +6,13 @@ namespace xc{
 		private:
 			shared_ptr<drawBasement::IDrawCotext> m_Context;
 			colorf mScreenColor;
+			shared_ptr<drawBasement::IDrawBuffer> mVertex;
+			shared_ptr<drawBasement::IDrawBuffer> mtex;
+			shared_ptr<drawBasement::IDrawIndexBuffer> mIndex;
+			shared_ptr<drawBasement::IBasedTextureProgramQ> mProg;
+			shared_ptr<drawBasement::ICanvas> mCanvas;
+			shared_ptr<viewer::ICamera> mCamera;
+			shared_ptr<drawBasement::IDrawTexture2D> mtexture;
 		public:
 			//////////////////////////////////////////////////////////////////////////
 			//	½Ó¿Ú

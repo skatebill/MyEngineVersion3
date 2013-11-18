@@ -10,6 +10,8 @@ namespace xc{
 
 			//! 从文件创建图片
 			virtual shared_ptr<IImage> createImageFromFile(const char* filename);
+			//! 读取文件
+			virtual shared_ptr<IFile> createReadableFile(const wchar_t* filename);
 
 		};
 	}

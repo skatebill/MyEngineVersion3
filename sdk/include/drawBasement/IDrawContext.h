@@ -3,8 +3,14 @@
 #include"IDrawTexture.h"
 namespace xc{
 	namespace drawBasement{
+		enum EnumCoordinateType{
+			RIGHT_HAND,
+			LEFT_HAND
+		};
 		class IDrawCotext{
 		public:
+			//! 获取坐标系类型
+			virtual EnumCoordinateType getCoordinateType()=0;
 			//! 提交后备缓冲的数据到屏幕
 			virtual void presentData()=0;
 			//! 清空屏幕颜色

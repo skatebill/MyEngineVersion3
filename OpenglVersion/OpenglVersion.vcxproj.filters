@@ -51,20 +51,17 @@
     <ClCompile Include="src\COpenglContext.cpp">
       <Filter>opengl</Filter>
     </ClCompile>
-    <ClCompile Include="src\COpenglDrawer.cpp">
-      <Filter>opengl</Filter>
-    </ClCompile>
     <ClCompile Include="src\COpenglFactory.cpp">
       <Filter>opengl</Filter>
     </ClCompile>
     <ClCompile Include="src\COpenglTexture.cpp">
       <Filter>opengl</Filter>
     </ClCompile>
+    <ClCompile Include="src\COpenglCanvas.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\program\COpenglBaseProgram.h">
-      <Filter>opengl\program</Filter>
-    </ClInclude>
     <ClInclude Include="src\program\COpenglProgram.h">
       <Filter>opengl\program</Filter>
     </ClInclude>
@@ -86,14 +83,23 @@
     <ClInclude Include="src\COpenglContext.h">
       <Filter>opengl</Filter>
     </ClInclude>
-    <ClInclude Include="src\COpenglDrawer.h">
-      <Filter>opengl</Filter>
-    </ClInclude>
     <ClInclude Include="src\COpenglFactory.h">
       <Filter>opengl</Filter>
     </ClInclude>
     <ClInclude Include="src\COpenglTexture.h">
       <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COpenglCanvas.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\program\COpenglBaseProgram.hpp">
+      <Filter>opengl\program</Filter>
+    </ClInclude>
+    <ClInclude Include="src\program\COpenglTexturedProgram.hpp">
+      <Filter>opengl\program</Filter>
+    </ClInclude>
+    <ClInclude Include="src\service\CFile.hpp">
+      <Filter>service</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

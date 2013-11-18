@@ -9,7 +9,8 @@ namespace xc{
 		public:
 			//! 获取纹理大小
 			virtual rect getTextureSize()=0;
-
+			//! 在指定位置使用纹理
+			virtual void use(int slot)=0;
 		};
 		//! rtt用离屏纹理
 		class IDrawRenderTexture:public IDrawTexture2D{

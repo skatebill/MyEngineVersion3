@@ -1,11 +1,12 @@
 #pragma once
 #include "IDrawBuffers.h"
 #include "IDrawContext.h"
-#include "IDrawer3D.h"
+#include "ICanvas.h"
 #include "IDrawProgram.h"
 #include "IDrawTexture.h"
 #include "IDrawContext.h"
 #include "MyTypes.h"
+#include<viewer/IMatrixStack.h>
 namespace xc{
 	namespace drawBasement{
 		class IDrawFactory{
@@ -13,7 +14,7 @@ namespace xc{
 			//! 创建指定类型的着色器
 			virtual IProgramFactory* getProgramFactory()=0;
 			//! 创建绘制器
-			virtual shared_ptr<IDrawer3D> createDrawer(shared_ptr<IDrawCotext> context)=0;
+			virtual shared_ptr<ICanvas> createCanvas(shared_ptr<IDrawCotext> context,shared_ptr<viewer::IMatStack> matStack)=0;
 			//! 创建顶点缓冲区
 			virtual shared_ptr<IDrawBuffer> createVertexBuffer()=0;
 			//! 创建索引缓冲区

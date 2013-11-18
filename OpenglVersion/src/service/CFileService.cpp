@@ -1,5 +1,6 @@
 #include "CFileService.h"
 #include "CFreeImage.h"
+#include "CFile.hpp"
 #include <filesystem>
 namespace xc{
 	namespace fileservice{
@@ -39,11 +40,36 @@ namespace xc{
 			 //get the image width and height
 			 image->m_Width = FreeImage_GetWidth(dib);
 			 image->m_Height = FreeImage_GetHeight(dib);
-			 FREE_IMAGE_COLOR_TYPE t = FreeImage_GetColorType(dib);
+			/* FREE_IMAGE_COLOR_TYPE t = FreeImage_GetColorType(dib);
 			 if(t == FIC_RGBALPHA){
 				 image->m_HasAlpha=true;
+			 }*/
+			 switch (fif)
+			 {
+			 case FIF_JPEG:
+			 case FIF_BMP:
+				 {
+					int n = image->m_Width * image->m_Height*3;
+					for(int i=0;i<n;i+=3){
+						unsigned char t = image->m_Data[i];
+						image->m_Data[i] =image->m_Data[i+2];
+						image->m_Data[i+2] = t;
+					}
+				 }
+				 image->m_HasAlpha=false;
+				 break;
+			 case FIF_PNG:
+			 case FIF_DDS:
+				 image->m_HasAlpha=true;
+				 break;
+			 default:
+				 break;
 			 }
 			 return shared_ptr<IImage>(image);
-		}
+		 }
+		 //! ¶ÁÈ¡ÎÄ¼þ
+		 shared_ptr<IFile> CFileService::createReadableFile(const wchar_t* filename){
+			 return shared_ptr<IFile>(new CFile(filename));
+		 }
 	}
 }
