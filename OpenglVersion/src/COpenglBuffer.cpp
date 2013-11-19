@@ -42,7 +42,7 @@ namespace xc{
 
 		//////////////////////////////////////////////////////////////////////////
 		COpenglIndexBuffer::COpenglIndexBuffer():
-			m_IBO(0),m_IndexNum(0),m_EPT(EPT_TRIANGLES),m_EIT(EIT_UBYTE)
+			m_IBO(0),m_IndexNum(0),m_EPT(EPT_TRIANGLES),m_EIT(EIT_USHORT)
 		{
 
 		}

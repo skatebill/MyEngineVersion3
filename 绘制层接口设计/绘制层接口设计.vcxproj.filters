@@ -19,9 +19,6 @@
     <Filter Include="组件">
       <UniqueIdentifier>{ad9994d8-ffcf-47ea-abae-446c4068dfb4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="service">
-      <UniqueIdentifier>{e7f8ca58-aead-4c32-99b1-4f5d884a7a2e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="绘制底层">
       <UniqueIdentifier>{53d8e82a-2498-403d-bf61-63dbe0f1fdbf}</UniqueIdentifier>
     </Filter>
@@ -36,6 +33,12 @@
     </Filter>
     <Filter Include="Viewer">
       <UniqueIdentifier>{3b12851a-ed4c-45ea-adb8-c584246e7ef2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fileservice">
+      <UniqueIdentifier>{e7f8ca58-aead-4c32-99b1-4f5d884a7a2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pharser">
+      <UniqueIdentifier>{bf6f141d-1f00-440c-8c6c-38f6729386c1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -70,10 +73,10 @@
       <Filter>绘制底层</Filter>
     </ClInclude>
     <ClInclude Include="..\sdk\include\service\file\IFileService.h">
-      <Filter>service</Filter>
+      <Filter>fileservice</Filter>
     </ClInclude>
     <ClInclude Include="..\sdk\include\service\file\IImage.h">
-      <Filter>service</Filter>
+      <Filter>fileservice</Filter>
     </ClInclude>
     <ClInclude Include="..\sdk\include\tools\dllCfg.h">
       <Filter>组件</Filter>
@@ -118,7 +121,13 @@
       <Filter>绘制底层</Filter>
     </ClInclude>
     <ClInclude Include="..\sdk\include\service\file\IFile.h">
-      <Filter>service</Filter>
+      <Filter>fileservice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\IModel.h">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\service\phraser\IPhraseSerivce.h">
+      <Filter>pharser</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

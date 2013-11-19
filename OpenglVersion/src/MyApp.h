@@ -16,6 +16,7 @@ namespace xc{
 			shared_ptr<drawBasement::IDrawTexture2D> mtexture;
 			shared_ptr<xc::drawBasement::IDrawVertexBufferOBject> m_VBO;
 			shared_ptr<xc::drawBasement::IDrawVertexBufferOBject> m_VBO2;
+			shared_ptr<xc::drawBasement::IModel> mModle;
 		public:
 			//////////////////////////////////////////////////////////////////////////
 			//	½Ó¿Ú

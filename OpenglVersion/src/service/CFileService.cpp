@@ -34,7 +34,7 @@ namespace xc{
 				 throw std::exception("error load image");
 			 }
 			 image->dib=dib;
-
+			 FreeImage_FlipVertical(dib);
 			 //retrieve the image data
 			 image->m_Data = FreeImage_GetBits(dib);
 			 //get the image width and height
@@ -44,10 +44,10 @@ namespace xc{
 			 if(t == FIC_RGBALPHA){
 				 image->m_HasAlpha=true;
 			 }*/
-			 switch (fif)
+			 int Bpp = FreeImage_GetBPP(dib);
+			 switch (Bpp)
 			 {
-			 case FIF_JPEG:
-			 case FIF_BMP:
+			 case 24:
 				 {
 					int n = image->m_Width * image->m_Height*3;
 					for(int i=0;i<n;i+=3){
@@ -58,8 +58,7 @@ namespace xc{
 				 }
 				 image->m_HasAlpha=false;
 				 break;
-			 case FIF_PNG:
-			 case FIF_DDS:
+			 case 32:
 				 image->m_HasAlpha=true;
 				 break;
 			 default:

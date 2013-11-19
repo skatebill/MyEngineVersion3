@@ -34,8 +34,9 @@ namespace xc{
 			EPT_TRIANGLE_STRIP
 		};
 		enum EnumIndexType{
-			EIT_UINT=0,
-			EIT_UBYTE
+			EIT_UBYTE=1,
+			EIT_USHORT=2,
+			EIT_UINT=4
 		};
 		static const unsigned short UINT_SIZE = sizeof(unsigned int);
 		static const unsigned short UBYTE_SIZE = sizeof(unsigned char);

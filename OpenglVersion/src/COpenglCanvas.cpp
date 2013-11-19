@@ -37,6 +37,9 @@ namespace xc{
 			case EIT_UINT:
 				itype = GL_UNSIGNED_INT;
 				break;
+			case EIT_USHORT:
+				itype = GL_UNSIGNED_SHORT;
+				break;
 			default:
 				return;
 				break;
@@ -76,6 +79,9 @@ namespace xc{
 				break;
 			case EIT_UINT:
 				itype = GL_UNSIGNED_INT;
+				break;
+			case EIT_USHORT:
+				itype = GL_UNSIGNED_SHORT;
 				break;
 			default:
 				return;

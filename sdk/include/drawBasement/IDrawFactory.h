@@ -5,6 +5,7 @@
 #include "IDrawProgram.h"
 #include "IDrawTexture.h"
 #include "IDrawContext.h"
+#include "IModel.h"
 #include "MyTypes.h"
 #include<viewer/IMatrixStack.h>
 namespace xc{
@@ -30,6 +31,11 @@ namespace xc{
 																				shared_ptr<IDrawBuffer> buf4=0)=0;
 			//! 创建绘制上下文
 			virtual shared_ptr<IDrawCotext> createDrawContext(void* data)=0;
+
+			//////////////////////////////////////////////////////////////////////////
+			shared_ptr<IModel> createModel(){
+				return shared_ptr<IModel>(new CModel);
+			}
 		};
 	}
 }

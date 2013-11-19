@@ -115,10 +115,10 @@ namespace xc{
 			tbuf[7] = vector2df(0,0);
 			mtex->initialBuffer();
 
-			mIndex->reSizeBuffer(24);
+			mIndex->reSizeBuffer(24*2);
 			mIndex->setIndexNums(24);
 			mIndex->setPrimityType(drawBasement::EPT_TRIANGLES);
-			unsigned char* ibuf = (unsigned char*)mIndex->lock();
+			unsigned short* ibuf = (unsigned short*)mIndex->lock();
 			int i=0;
 			ibuf[i++]=0;
 			ibuf[i++]=1;
@@ -162,11 +162,11 @@ namespace xc{
 			mCamera = this->getSite()->getViewerFactory()->createCamera();
 			mCanvas->attachCamera(mCamera);
 
-			mCamera->goForward(-5);
+			mCamera->goForward(-15);
 			//mCamera->setCamera(vector3df(0,0,-5),vector3df(0,0,0));
 
 			mtexture = this->getSite()->getDrawFactory()->getTextureFactory()->createTextureFromImage(this->getSite()->getFileService()->
-				createImageFromFile("1.bmp").get());
+				createImageFromFile("phoenix.pcx").get());
 
 			auto f = getSite()->getFileService()->createReadableFile(L"1234.txt");
 			string filename = f->getAbsolutePath();
@@ -189,10 +189,10 @@ namespace xc{
 			vbuf[3] = vector3df(-1,1,0);
 			vertex->initialBuffer();
 
-			index->reSizeBuffer(6);
+			index->reSizeBuffer(6*2);
 			index->setIndexNums(6);
 			index->setPrimityType(drawBasement::EPT_TRIANGLES);
-			ibuf = (unsigned char*)index->lock();
+			ibuf = (unsigned short*)index->lock();
 			i=0;
 			ibuf[i++]=0;
 			ibuf[i++]=1;
@@ -204,6 +204,8 @@ namespace xc{
 
 			index->initialBuffer();
 			m_VBO2 =this->getSite()->getDrawFactory()->createVertexBufferObject(vertex,index);
+
+			mModle = getSite()->getPhraser()->loadModelFromFile(L"phoenix_ugv.md2");
 
 		}
 		//! Ïú»Ù
@@ -222,23 +224,29 @@ namespace xc{
 			mat4 p=mCanvas->getProjectionMatrix();
 			mProg->uploadMatrix(p*v*w);
 			mProg->uploadTexture(mtexture.get());
-			mCanvas->render(m_VBO);
+			//mCanvas->render(m_VBO);
 			mProg->endDraw();
 			mCanvas->getMatStack()->pop();
 
 			mCanvas->getMatStack()->push();
-			mCanvas->getMatStack()->translate(vector3df(1,0,0));
-			mProg2->prepareDraw();
-			mProg2->uploadColor(colorf(1,1,0,1));
+			static float y=0;
+			y+=0.01;
+			mCanvas->getMatStack()->rotate(y,vector3df(0,1,0));
+			mCanvas->getMatStack()->scale(vector3df(0.1f,0.1f,0.1f));
+			mCanvas->getMatStack()->translate(vector3df(0,-1,0));
+			mProg->prepareDraw();
+			mProg->uploadTexture(mtexture.get());
 			w=mCanvas->getWorldTranslateMatrix();
 			v=mCanvas->getViewMatrix();
 			p=mCanvas->getProjectionMatrix();
-			mProg2->uploadMatrix(p*v*w);
+			mProg->uploadMatrix(p*v*w);
 
-			mCanvas->render(m_VBO2);
-			mProg2->endDraw();
+		//	mCanvas->render(m_VBO2);
+			mModle->render(mCanvas.get());
+			mProg->endDraw();
 			mCanvas->getMatStack()->pop();
 			m_Context->presentData();
+			
 		}
 	}
 }

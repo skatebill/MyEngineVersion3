@@ -8,6 +8,7 @@
 #include<site/site.h>
 #include<service/CFileService.h>
 #include<viewer/CViewFactory.hpp>
+#include<phraser/CAssimpPhraser.hpp>
 #pragma comment (lib, "winmm.lib")     /* link with Windows MultiMedia lib */
 #pragma comment (lib, "opengl32.lib")  /* link with Microsoft OpenGL lib */
 #pragma comment (lib, "glu32.lib")     /* link with OpenGL Utility lib */
@@ -153,6 +154,7 @@ void create( HINSTANCE hInstance ,int w,int h)
 	s->installDrawFactory(xc::shared_ptr<xc::drawBasement::IDrawFactory>(new xc::drawBasement::COpenglFactory));
 	s->installFileService(xc::shared_ptr<xc::fileservice::IFileService>(new xc::fileservice::CFileService));
 	s->installViewerFactory(xc::shared_ptr<xc::viewer::IViewerFactory>(new xc::viewer::CViewFactory));
+	s->installPhraser(xc::shared_ptr<xc::phraser::IPhraserService>(new xc::phraser::CPhraserService(s->getFileService(),s->getDrawFactory())));
 
 	ShowWindow( temp::hwnd, SW_SHOW );
 }

@@ -32,6 +32,7 @@ namespace xc{
 	typedef unsigned int u32;
 	typedef unsigned int UINT;
 	typedef unsigned char u8;
+	typedef unsigned short u16;
 
 	using std::shared_ptr;
 

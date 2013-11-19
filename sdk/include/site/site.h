@@ -3,6 +3,7 @@
 #include<MyTypes.h>
 #include<service/file/IFileService.h>
 #include<viewer/IViewFactory.h>
+#include<service/phraser/IPhraseSerivce.h>
 namespace xc{
 	class ISite{
 	public:
@@ -12,12 +13,15 @@ namespace xc{
 		virtual shared_ptr<fileservice::IFileService> getFileService()=0;
 		//! 获取View工厂
 		virtual shared_ptr<viewer::IViewerFactory> getViewerFactory()=0;
+		//! 获取模型解析工厂
+		virtual shared_ptr<phraser::IPhraserService> getPhraser()=0;
 	};
 	class ISiteEdieable:public ISite{
 	private:
 		shared_ptr<drawBasement::IDrawFactory> mDrawFactory;
 		shared_ptr<fileservice::IFileService> mFileServie;
 		shared_ptr<viewer::IViewerFactory> mViewerFactory;
+		shared_ptr<phraser::IPhraserService> mPhraser;
 	public:
 		//! 获取绘制工厂
 		shared_ptr<drawBasement::IDrawFactory> getDrawFactory(){
@@ -48,6 +52,14 @@ namespace xc{
 		//! 获取View工厂
 		virtual shared_ptr<viewer::IViewerFactory> getViewerFactory(){
 			return mViewerFactory;
+		}
+
+		//! 安装View工厂
+		void installPhraser(shared_ptr<phraser::IPhraserService> f){
+			mPhraser=f;
+		}
+		virtual shared_ptr<phraser::IPhraserService> getPhraser(){
+			return mPhraser;
 		}
 
 	};
