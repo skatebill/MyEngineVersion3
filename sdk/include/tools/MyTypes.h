@@ -25,7 +25,7 @@ namespace xc{
 		static const colorf WHITE(1,1,1);
 	}
 
-	typedef irr::core::stringw string;
+	typedef irr::core::stringc string;
 	typedef irr::core::recti rect;
 	typedef irr::core::recti recti;
 	typedef irr::core::rectf rectf;
@@ -33,8 +33,12 @@ namespace xc{
 	typedef unsigned int UINT;
 	typedef unsigned char u8;
 	typedef unsigned short u16;
+	typedef float	f32;
+	typedef double f64;
 
 	using std::shared_ptr;
+	using irr::core::degToRad;
+	using irr::core::radToDeg;
 
 
 }

@@ -6,12 +6,12 @@ namespace xc{
 		class CFile:public IFile{
 		private:
 			std::ifstream mFile;
-			std::tr2::sys::wpath mPath;
+			std::tr2::sys::path mPath;
 			unsigned long mFileSize;
 			bool mIsopened;
 		public:
-			CFile(const wchar_t* filename){
-				mPath = std::tr2::sys::wpath(filename);
+			CFile(const char* filename){
+				mPath = std::tr2::sys::path(filename);
 				if(!std::tr2::sys::exists(mPath))
 				{
 					throw std::exception("file not exsists");

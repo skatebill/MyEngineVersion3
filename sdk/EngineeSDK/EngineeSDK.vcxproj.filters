@@ -16,6 +16,9 @@
     <Filter Include="sdk">
       <UniqueIdentifier>{efbbde26-27cb-419a-b5cb-e7cceccf72ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sdk\model">
+      <UniqueIdentifier>{e730ca50-eced-4190-a269-6d9dffcb6367}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

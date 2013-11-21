@@ -24,6 +24,8 @@ namespace xc{
 			virtual void reSet()=0;
 			//! 获取当前矩阵
 			virtual mat4 getWorldTransMat()=0;
+			//! 直接进行矩阵操作
+			virtual void mutipleMatrix(mat4 &m)=0;
 		};
 	}
 }

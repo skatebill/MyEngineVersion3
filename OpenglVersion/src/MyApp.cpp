@@ -168,10 +168,7 @@ namespace xc{
 			mtexture = this->getSite()->getDrawFactory()->getTextureFactory()->createTextureFromImage(this->getSite()->getFileService()->
 				createImageFromFile("phoenix.pcx").get());
 
-			auto f = getSite()->getFileService()->createReadableFile(L"1234.txt");
-			string filename = f->getAbsolutePath();
-			auto fsize = f->getFileSize();
-			string name = f->getFileName();
+			
 
 			m_VBO =this->getSite()->getDrawFactory()->createVertexBufferObject(mVertex,mIndex,mtex);
 
@@ -205,7 +202,7 @@ namespace xc{
 			index->initialBuffer();
 			m_VBO2 =this->getSite()->getDrawFactory()->createVertexBufferObject(vertex,index);
 
-			mModle = getSite()->getPhraser()->loadModelFromFile(L"phoenix_ugv.md2");
+			mModle = getSite()->getPhraser()->loadModelFromFile("models/boblampclean.md5mesh");
 
 		}
 		//! Ïú»Ù
@@ -230,9 +227,10 @@ namespace xc{
 
 			mCanvas->getMatStack()->push();
 			static float y=0;
+			mCanvas->getMatStack()->mutipleMatrix(mModle->getBaseTranslateMatrix());
+			mCanvas->getMatStack()->scale(vector3df(0.1f,0.1f,0.1f));
 			y+=0.01;
 			mCanvas->getMatStack()->rotate(y,vector3df(0,1,0));
-			mCanvas->getMatStack()->scale(vector3df(0.1f,0.1f,0.1f));
 			mCanvas->getMatStack()->translate(vector3df(0,-1,0));
 			mProg->prepareDraw();
 			mProg->uploadTexture(mtexture.get());

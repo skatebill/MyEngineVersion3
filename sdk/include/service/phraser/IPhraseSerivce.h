@@ -6,7 +6,7 @@ namespace xc{
 		class IPhraserService{
 			public:
 				//! ¶ÁÈ¡Ä£ÐÍ
-				virtual shared_ptr<drawBasement::IModel> loadModelFromFile(const wchar_t* filename)=0;
+				virtual shared_ptr<drawBasement::IModel> loadModelFromFile(const char* filename)=0;
 		};
 	}
 }

@@ -34,7 +34,7 @@ namespace xc{
 				 throw std::exception("error load image");
 			 }
 			 image->dib=dib;
-			 FreeImage_FlipVertical(dib);
+			// FreeImage_FlipVertical(dib);
 			 //retrieve the image data
 			 image->m_Data = FreeImage_GetBits(dib);
 			 //get the image width and height
@@ -67,7 +67,7 @@ namespace xc{
 			 return shared_ptr<IImage>(image);
 		 }
 		 //! ¶ÁÈ¡ÎÄ¼þ
-		 shared_ptr<IFile> CFileService::createReadableFile(const wchar_t* filename){
+		 shared_ptr<IFile> CFileService::createReadableFile(const char* filename){
 			 return shared_ptr<IFile>(new CFile(filename));
 		 }
 	}

@@ -129,6 +129,9 @@
     <ClInclude Include="..\sdk\include\service\phraser\IPhraseSerivce.h">
       <Filter>pharser</Filter>
     </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\IBones.h">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

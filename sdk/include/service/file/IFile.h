@@ -43,7 +43,7 @@ namespace xc{
 			//! 写入数据
 			virtual void write(char* data,int size)=0;
 			//! 写入字符串
-			virtual void writeString(const wchar_t* str)=0;
+			virtual void writeString(const char* str)=0;
 
 		};
 	}

@@ -51,6 +51,10 @@ namespace xc{
 			virtual void reSet(){
 				mCurMat.makeIdentity();
 			}
+			//! 直接进行矩阵操作
+			virtual void mutipleMatrix(mat4 &m){
+				mCurMat = m * mCurMat;
+			}
 
 		};
 	}
