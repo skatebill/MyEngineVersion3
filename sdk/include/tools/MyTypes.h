@@ -4,9 +4,12 @@
 #include"matrix4.h"
 #include"irrString.h"
 #include"Scolor.h"
+#include"quaternion.h"
 namespace xc{
 	typedef irr::core::vector3df vector3df;
 	typedef irr::core::vector3d<double> vector3dd;
+	static const vector3dd zero3dd(0,0,0);
+	static const vector3df zero3df(0,0,0);
 
 	typedef irr::core::vector2df vector2df;
 	typedef irr::core::vector2d<double> vector2dd;
@@ -15,6 +18,7 @@ namespace xc{
 	typedef irr::core::CMatrix4<float> mat4f;
 	typedef irr::core::CMatrix4<double> mat4d;
 	typedef mat4f mat4;
+	typedef irr::core::quaternion quaternion;
 
 	typedef irr::video::SColorf colorf;
 	namespace color{

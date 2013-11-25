@@ -132,6 +132,9 @@
     <ClInclude Include="..\sdk\include\drawBasement\IBones.h">
       <Filter>绘制底层</Filter>
     </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\CBones.hpp">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -145,6 +148,9 @@
     </ClCompile>
     <ClCompile Include="..\sdk\include\viewer\CMatStack.hpp">
       <Filter>Viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk\include\drawBasement\CModel.hpp">
+      <Filter>绘制底层</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

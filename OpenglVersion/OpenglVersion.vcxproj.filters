@@ -113,5 +113,8 @@
     <ClInclude Include="src\phraser\CAssimpPhraser.hpp">
       <Filter>phraser</Filter>
     </ClInclude>
+    <ClInclude Include="src\program\COpenglBonedProgram.hpp">
+      <Filter>opengl\program</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

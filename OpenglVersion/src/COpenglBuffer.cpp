@@ -5,7 +5,7 @@
 namespace xc{
 	namespace drawBasement{
 
-		COpenglBuffer::COpenglBuffer():m_Buff(nullptr),m_Size(0),m_VBO(0),m_ElementSize(0){
+		COpenglBuffer::COpenglBuffer():m_Buff(nullptr),m_Size(0),m_VBO(0),m_ElementSize(0),mDataType(GL_FLOAT){
 
 		}
 		COpenglBuffer::~COpenglBuffer(){
@@ -28,7 +28,12 @@ namespace xc{
 		void COpenglBuffer::use(int slot){
 			glEnableVertexAttribArray(slot);
 			glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
-			glVertexAttribPointer(slot, m_ElementSize, GL_FLOAT, GL_FALSE, 0, 0);
+			if(mDataType == GL_UNSIGNED_INT){
+				glVertexAttribIPointer(slot, m_ElementSize, mDataType,0, 0);
+
+			}else{
+				glVertexAttribPointer(slot, m_ElementSize, mDataType, GL_FALSE, 0, 0);
+			}
 		}
 		void COpenglBuffer::unUse(int slot){
 			glDisableVertexAttribArray(slot);

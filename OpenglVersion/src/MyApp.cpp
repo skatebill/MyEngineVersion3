@@ -86,6 +86,7 @@ namespace xc{
 			mVertex = this->getSite()->getDrawFactory()->createVertexBuffer();
 
 			mProg = this->getSite()->getDrawFactory()->getProgramFactory()->createBaseQuickTextureProgram();
+			mBoneProg = this->getSite()->getDrawFactory()->getProgramFactory()->createBaseQuickBonedProgram();
 			mVertex->reSizeBuffer(sizeof(vector3df)*8);
 			mVertex->setElemtSize(3);
 			vector3df* vbuf = (vector3df*)mVertex->lock();
@@ -203,7 +204,7 @@ namespace xc{
 			m_VBO2 =this->getSite()->getDrawFactory()->createVertexBufferObject(vertex,index);
 
 			mModle = getSite()->getPhraser()->loadModelFromFile("models/boblampclean.md5mesh");
-
+			
 		}
 		//! Ïú»Ù
 		void myapp::onCleanup(){
@@ -227,22 +228,46 @@ namespace xc{
 
 			mCanvas->getMatStack()->push();
 			static float y=0;
+			//mCanvas->getMatStack()->mutipleMatrix(mModle->getBaseTranslateMatrix());
+			mCanvas->getMatStack()->scale(vector3df(0.1f,0.1f,0.1f));
+			//y+=0.01;
+			mCanvas->getMatStack()->rotate(y,vector3df(0,1,0));
+			mCanvas->getMatStack()->translate(vector3df(0,-1,0));
+			static float frame = 0;
+			frame+=0.15f;
+			if(frame>54) frame = 0;
+			mModle->getBoneAnimator()->setCurrentFrame(frame);
+			mBoneProg->prepareDraw();
+			mBoneProg->uploadTexture(mtexture.get());
+			w=mCanvas->getWorldTranslateMatrix();
+			v=mCanvas->getViewMatrix();
+			p=mCanvas->getProjectionMatrix();
+			mBoneProg->uploadMatrix(p*v*w);
+			mBoneProg->uploadBoneMatrix(mModle->getBoneAnimator()->getUniformMatrixBuffer(),mModle->getBoneAnimator()->getUniformMatrixSize());
+			mModle->render(mCanvas.get());
+			mBoneProg->endDraw();
+			mCanvas->getMatStack()->pop();
+
+		/*	mCanvas->getMatStack()->push();
+			static float y=0;
 			mCanvas->getMatStack()->mutipleMatrix(mModle->getBaseTranslateMatrix());
 			mCanvas->getMatStack()->scale(vector3df(0.1f,0.1f,0.1f));
 			y+=0.01;
 			mCanvas->getMatStack()->rotate(y,vector3df(0,1,0));
 			mCanvas->getMatStack()->translate(vector3df(0,-1,0));
+			static float frame = 0;
+			frame+=0.5f;
+			if(frame>10) frame = 0;
 			mProg->prepareDraw();
 			mProg->uploadTexture(mtexture.get());
 			w=mCanvas->getWorldTranslateMatrix();
 			v=mCanvas->getViewMatrix();
 			p=mCanvas->getProjectionMatrix();
 			mProg->uploadMatrix(p*v*w);
-
-		//	mCanvas->render(m_VBO2);
 			mModle->render(mCanvas.get());
 			mProg->endDraw();
-			mCanvas->getMatStack()->pop();
+			mCanvas->getMatStack()->pop();*/
+
 			m_Context->presentData();
 			
 		}

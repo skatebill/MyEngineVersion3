@@ -1,6 +1,7 @@
 #include "COpenglProgramFactory.h"
 #include "COpenglBaseProgram.hpp"
 #include "COpenglTexturedProgram.hpp"
+#include "COpenglBonedProgram.hpp"
 namespace xc{
 	namespace drawBasement{
 
@@ -19,6 +20,12 @@ namespace xc{
 			COpenglTexturedProgramQ<IBasedTextureProgramQ>* r(new COpenglTexturedProgramQ<IBasedTextureProgramQ>);
 			r->initialProgram();
 			return shared_ptr<IBasedTextureProgramQ>(r);
+		}
+		//! 创建快速版本的骨骼动画shader
+		shared_ptr<IBonedProgramQ> COpenglProgramFactory::createBaseQuickBonedProgram(){
+			COpenglBonedProgramQ<IBonedProgramQ>* r(new COpenglBonedProgramQ<IBonedProgramQ>);
+			r->initialProgram();
+			return shared_ptr<IBonedProgramQ>(r);
 		}
 	}
 }

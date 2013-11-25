@@ -83,6 +83,7 @@
     <ClInclude Include="..\sdk\include\application\IApplication.h" />
     <ClInclude Include="..\sdk\include\application\appTypes.h" />
     <ClInclude Include="..\sdk\include\application\paltform\windows.h" />
+    <ClInclude Include="..\sdk\include\drawBasement\CBones.hpp" />
     <ClInclude Include="..\sdk\include\drawBasement\IBones.h" />
     <ClInclude Include="..\sdk\include\drawBasement\IDrawBuffers.h" />
     <ClInclude Include="..\sdk\include\drawBasement\IDrawContext.h" />
@@ -111,6 +112,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\sdk\include\drawBasement\CModel.hpp" />
     <ClCompile Include="..\sdk\include\viewer\CCamera.hpp" />
     <ClCompile Include="..\sdk\include\viewer\CMatStack.hpp" />
     <ClCompile Include="stdafx.cpp">

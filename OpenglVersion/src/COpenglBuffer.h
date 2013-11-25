@@ -11,6 +11,7 @@ namespace xc{
 			unsigned int m_ElementSize;
 			unsigned char* m_Buff;
 			GLuint m_VBO;
+			GLuint mDataType;
 		public:
 			explicit COpenglBuffer();
 			~COpenglBuffer();
@@ -34,6 +35,39 @@ namespace xc{
 			virtual void initialBuffer();
 			//! 释放资源
 			virtual void unUse(int slot);
+
+			//! 设置数据类型
+			virtual void setDataType(EnumDataType t){
+				switch (t)
+				{
+				case xc::drawBasement::EDT_FLOAT:
+					mDataType = GL_FLOAT;
+					break;
+				case xc::drawBasement::EDT_UINT:
+					mDataType = GL_UNSIGNED_INT;
+					break;
+				case xc::drawBasement::EDT_INT:
+					mDataType = GL_INT;
+					break;
+				case xc::drawBasement::EDT_DOUBLE:
+					mDataType = GL_DOUBLE;
+					break;
+				case xc::drawBasement::EDT_USHORT:
+					mDataType = GL_UNSIGNED_SHORT;
+					break;
+				case xc::drawBasement::EDT_SHORT:
+					mDataType = GL_SHORT;
+					break;
+				case xc::drawBasement::EDT_UBYTE:
+					mDataType = GL_UNSIGNED_BYTE;
+					break;
+				case xc::drawBasement::EDT_BYTE:
+					mDataType = GL_BYTE;
+					break;
+				default:
+					break;
+				}
+			}
 		};
 
 		class COpenglIndexBuffer:virtual public COpenglBuffer,virtual public IDrawIndexBuffer{

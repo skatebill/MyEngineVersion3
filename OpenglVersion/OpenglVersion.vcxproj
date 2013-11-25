@@ -102,6 +102,7 @@
     <ClInclude Include="src\MyApp.h" />
     <ClInclude Include="src\phraser\CAssimpPhraser.hpp" />
     <ClInclude Include="src\program\COpenglBaseProgram.hpp" />
+    <ClInclude Include="src\program\COpenglBonedProgram.hpp" />
     <ClInclude Include="src\program\COpenglProgram.h" />
     <ClInclude Include="src\program\COpenglProgramFactory.h" />
     <ClInclude Include="src\program\COpenglTexturedProgram.hpp" />

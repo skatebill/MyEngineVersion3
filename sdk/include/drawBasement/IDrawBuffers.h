@@ -7,6 +7,30 @@
 #pragma once
 namespace xc{
 	namespace drawBasement{
+		//! 图元类型枚举
+		enum EnumPrimityType
+		{
+			EPT_DOTS=0,
+			EPT_LINES,
+			EPT_LINE_STRIP,
+			EPT_TRIANGLES,
+			EPT_TRIANGLE_STRIP
+		};
+		enum EnumIndexType{
+			EIT_UBYTE=1,
+			EIT_USHORT=2,
+			EIT_UINT=4
+		};
+		enum EnumDataType{
+			EDT_FLOAT,
+			EDT_UINT,
+			EDT_INT,
+			EDT_DOUBLE,
+			EDT_USHORT,
+			EDT_SHORT,
+			EDT_UBYTE,
+			EDT_BYTE
+		};
 		class IDrawBuffer{
 		public:
 			//! lock out 内部的缓冲区（再更改数据之后）
@@ -23,20 +47,8 @@ namespace xc{
 			virtual void unUse(int slot)=0;
 			//! 初始化缓冲区(在数据更改后调用一下可以上传新数据到显存中)
 			virtual void initialBuffer()=0;
-		};
-		//! 图元类型枚举
-		enum EnumPrimityType
-		{
-			EPT_DOTS=0,
-			EPT_LINES,
-			EPT_LINE_STRIP,
-			EPT_TRIANGLES,
-			EPT_TRIANGLE_STRIP
-		};
-		enum EnumIndexType{
-			EIT_UBYTE=1,
-			EIT_USHORT=2,
-			EIT_UINT=4
+			//! 设置数据类型
+			virtual void setDataType(EnumDataType t)=0;
 		};
 		static const unsigned short UINT_SIZE = sizeof(unsigned int);
 		static const unsigned short UBYTE_SIZE = sizeof(unsigned char);

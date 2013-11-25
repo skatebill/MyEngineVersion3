@@ -17,6 +17,7 @@ namespace xc{
 			shared_ptr<xc::drawBasement::IDrawVertexBufferOBject> m_VBO;
 			shared_ptr<xc::drawBasement::IDrawVertexBufferOBject> m_VBO2;
 			shared_ptr<xc::drawBasement::IModel> mModle;
+			shared_ptr<drawBasement::IBonedProgramQ> mBoneProg;
 		public:
 			//////////////////////////////////////////////////////////////////////////
 			//	½Ó¿Ú

@@ -33,9 +33,8 @@ namespace xc{
 			virtual shared_ptr<IDrawCotext> createDrawContext(void* data)=0;
 
 			//////////////////////////////////////////////////////////////////////////
-			shared_ptr<IModel> createModel(){
-				return shared_ptr<IModel>(new CModel);
-			}
+			//! 创建模型
+			virtual shared_ptr<IModel> createModel()=0;
 		};
 	}
 }

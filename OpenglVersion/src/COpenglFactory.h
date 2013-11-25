@@ -1,4 +1,5 @@
 #include<IDrawFactory.h>
+#include "CModel.hpp"
 namespace xc{
 	namespace drawBasement{
 		class COpenglFactory:public IDrawFactory{
@@ -27,6 +28,11 @@ namespace xc{
 				shared_ptr<IDrawBuffer> buf2=0,
 				shared_ptr<IDrawBuffer> buf3=0,
 				shared_ptr<IDrawBuffer> buf4=0);
+
+			//! 创建模型
+			virtual shared_ptr<IModel> createModel(){
+				return shared_ptr<IModel>(new CModel);
+			}
 		};
 	}
 }
