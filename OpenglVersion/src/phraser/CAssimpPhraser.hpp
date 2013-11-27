@@ -7,7 +7,7 @@
 #include <assimp/scene.h>
 #include <IDrawFactory.h>
 #include <CBones.hpp>
-#include<CModel.hpp>
+#include <CModel.hpp>
 #ifndef ZeroMemory
 #define ZeroMemory(Destination,Length) memset((Destination),0,(Length))
 #endif
@@ -24,16 +24,16 @@ namespace xc{
 				fi->read((char*)buf,size);
 				const aiScene* pScene = Imp.ReadFile(fi->getAbsolutePath().c_str(),aiProcess_Triangulate | aiProcess_GenSmoothNormals);
 				free(buf);
+
 				const aiVector3D Zero3D(0.0f, 0.0f, 0.0f);
 				auto model = new drawBasement::CModel;
+				model->modelPath = fi->getAbsolutePath();
 				//¹Ç÷À¶¯»­³õÊ¼»¯
 				if(pScene->HasAnimations()){
 					model->mBoneAnimator = shared_ptr<drawBasement::CBoneAnimator>(new drawBasement::CBoneAnimator);
-					memcpy(&model->mBoneAnimator->mGlobleInverseTranslate,&pScene->mRootNode->mTransformation,sizeof(f32)*16);
-	/*				model->mBoneAnimator->mGlobleInverseTranslate = model->mBoneAnimator->mGlobleInverseTranslate.getTransposed();
-					model->mBoneAnimator->mGlobleTranslate = model->mBoneAnimator->mGlobleInverseTranslate;
-					model->mBoneAnimator->mGlobleInverseTranslate.makeInverse();*/
 					buildBoneAnimations(pScene->mAnimations[0],pScene->mRootNode,model);
+					model->mBoneAnimator->mMaxFrames = pScene->mAnimations[0]->mDuration;
+					model->mBoneAnimator->mFramePerSecond = pScene->mAnimations[0]->mTicksPerSecond;
 				}
 				mat4 zeroMat;
 				ZeroMemory(&zeroMat,sizeof(mat4));
@@ -227,6 +227,8 @@ namespace xc{
 						ts.scaleInfo.Z = r.z;
 						bone->scaleList.push_back(ts);
 					}
+					/*bone->mMaxFrame = max(pNodeAnim->mNumPositionKeys,pNodeAnim->mNumRotationKeys);
+					bone->mMaxFrame = max(bone->mMaxFrame,pNodeAnim->mNumScalingKeys);*/
 				}
 
 				for(u32 i=0;i<node->mNumChildren;++i){

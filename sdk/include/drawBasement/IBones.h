@@ -28,12 +28,12 @@ namespace xc{
 		};
 		class IBoneAnimator{
 		public:
-			//! 获取动画一帧的时间
-			virtual f32 getPerFrameTime()=0;
+			//! 获取动画一秒有几帧
+			virtual f32 getFramePerSecond()=0;
 			//! 获取当前动画位置
 			virtual f32 getCurrentFramePos()=0;
 			//! 获取动画帧数
-			virtual u32 getNumFrames()=0;
+			virtual f32 getNumFrames()=0;
 			//! 设置当前位置
 			virtual void setCurrentFrame(f32 fPos)=0;
 			//! 找到指定骨骼

@@ -235,7 +235,7 @@ namespace xc{
 			mCanvas->getMatStack()->translate(vector3df(0,-1,0));
 			static float frame = 0;
 			frame+=0.15f;
-			if(frame>54) frame = 0;
+			if(frame>mModle->getBoneAnimator()->getNumFrames()) frame = 0;
 			mModle->getBoneAnimator()->setCurrentFrame(frame);
 			mBoneProg->prepareDraw();
 			mBoneProg->uploadTexture(mtexture.get());

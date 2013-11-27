@@ -76,7 +76,7 @@ namespace xc{
 			mat4 boneOffset;
 			bool isinitial;
 			string mBoneName;
-			f32 mMAxFrame;
+			f32 mMaxFrame;
 			u32 idx;
 			CBone(IBone* parent):mParent(parent),mCurrentFramePos(0){
 				isinitial=true;
@@ -99,14 +99,17 @@ namespace xc{
 								return mCurrentFramePos<s.keyPos;
 							});
 							if(spos == scaleList.end()){
-								throw exception("bone anime out of range error");
+								vector3df scale = scaleList[scaleList.size()-1].scaleInfo;
+								scaleMat.setScale(scale);
+							}else{
+
+								auto pre = spos;
+								pre--;
+								auto t = (mCurrentFramePos - pre->keyPos)/(spos->keyPos-pre->keyPos);
+								vector3df t1=pre->scaleInfo,t2=spos->scaleInfo;
+								auto t3 = (t2-t1)*t+t1;
+								scaleMat.setScale(t3);
 							}
-							auto pre = spos;
-							pre--;
-							auto t = (mCurrentFramePos - pre->keyPos)/(spos->keyPos-pre->keyPos);
-							vector3df t1=pre->scaleInfo,t2=spos->scaleInfo;
-							auto t3 = (t2-t1)*t+t1;
-							scaleMat.setScale(t3);
 						}
 						// translate 差值
 						if(translateList.size() == 1){
@@ -117,14 +120,16 @@ namespace xc{
 								return mCurrentFramePos<s.keyPos;
 							});
 							if(spos == translateList.end()){
-								throw exception("bone anime out of range error");
+								vector3df trans = translateList[translateList.size()-1].translateInfo;
+								translateMat.setTranslation(trans);
+							}else{
+								auto pre = spos;
+								pre--;
+								auto t = (mCurrentFramePos - pre->keyPos)/(spos->keyPos-pre->keyPos);
+								vector3df t1=pre->translateInfo,t2=spos->translateInfo;
+								auto t3 = (t2-t1)*t+t1;
+								translateMat.setTranslation(t3);
 							}
-							auto pre = spos;
-							pre--;
-							auto t = (mCurrentFramePos - pre->keyPos)/(spos->keyPos-pre->keyPos);
-							vector3df t1=pre->translateInfo,t2=spos->translateInfo;
-							auto t3 = (t2-t1)*t+t1;
-							translateMat.setTranslation(t3);
 						}
 						// rotate 差值
 						if(rotateList.size() == 1){
@@ -135,14 +140,16 @@ namespace xc{
 								return mCurrentFramePos<s.keyPos;
 							});
 							if(spos == rotateList.end()){
-								throw exception("bone anime out of range error");
+								quaternion r = rotateList[rotateList.size()-1].rotateInfo;
+								r.getMatrix(rotateMat,zero3df);
+							}else{
+								auto pre = spos;
+								pre--;
+								auto t = (mCurrentFramePos - pre->keyPos)/(spos->keyPos-pre->keyPos);
+								auto t1=pre->rotateInfo,t2=spos->rotateInfo;
+								auto t3 = t1.lerp(t1,t2,t);
+								t3.getMatrix(rotateMat,zero3df);
 							}
-							auto pre = spos;
-							pre--;
-							auto t = (mCurrentFramePos - pre->keyPos)/(spos->keyPos-pre->keyPos);
-							auto t1=pre->rotateInfo,t2=spos->rotateInfo;
-							auto t3 = t1.lerp(t1,t2,t);
-							t3.getMatrix(rotateMat,zero3df);
 						}
 						mat4 xx=boneOffset;xx.makeInverse();
 						mCurrentMatrix = translateMat*rotateMat*scaleMat;
@@ -165,7 +172,7 @@ namespace xc{
 
 			//! 获取骨骼节点的最大关键帧位置
 			virtual f32 getMaxFrame(){
-				return mMAxFrame;
+				return mMaxFrame;
 			}
 			//! 获取骨骼名
 			virtual const char* getBoneName(){
@@ -183,11 +190,11 @@ namespace xc{
 			f32 mcurFrame;
 			std::vector<mat4> mUnifomMatBuffer;
 		public:
-			u32 mMaxFrames;
-			f32 mPerFrameTime;
+			f32 mMaxFrames;
+			f32 mFramePerSecond;
 			mat4 mGlobleInverseTranslate;
 			mat4 mGlobleTranslate;
-			CBoneAnimator():mcurFrame(0){
+			CBoneAnimator():mcurFrame(0),mMaxFrames(0){
 			}
 			//! 添加骨骼
 			u32 addBones(shared_ptr<IBone> bo){
@@ -195,11 +202,11 @@ namespace xc{
 				return mBoneList.size()-1;
 			}
 			//! 获取动画一帧的时间
-			virtual f32 getPerFrameTime(){
-				return mPerFrameTime;
+			virtual f32 getFramePerSecond(){
+				return mFramePerSecond;
 			}
 			//! 获取动画帧数
-			virtual u32 getNumFrames(){
+			virtual f32 getNumFrames(){
 				return mMaxFrames;
 			}
 			//! 设置当前位置
@@ -237,6 +244,15 @@ namespace xc{
 			virtual u32 getUniformMatrixSize(){
 				return mUnifomMatBuffer.size();
 			}
+
+			void computeMaxFrames()
+			{
+				for(u32 i=0;i<mBoneList.size();++i){
+					mMaxFrames = max(mMaxFrames,mBoneList[i]->getMaxFrame());
+				}
+			}
+
+
 		};
 	}
 }

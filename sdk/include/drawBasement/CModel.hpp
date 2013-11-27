@@ -14,11 +14,9 @@ namespace xc{
 		class CModel:public CobjContainer<IModel,ModelMeshInfo>{
 		public:
 			std::unordered_map<int,ModelMatrials> mMatarials;
-			mat4 mBaseMat;
 			shared_ptr<CBoneAnimator> mBoneAnimator;
+			string modelPath;
 			CModel(){
-				mBaseMat.setRotationDegrees(vector3df(270.f,180.f,0));
-
 			}
 			void render(ICanvas* canvas){
 				this->doFunc([&canvas,this](ModelMeshInfo& mm){
@@ -27,10 +25,8 @@ namespace xc{
 				});
 			}
 			virtual IBoneAnimator* getBoneAnimator(){
+				if(mBoneAnimator == nullptr) throw exception("no bone Animator");
 				return mBoneAnimator.get();
-			}
-			virtual mat4 getBaseTranslateMatrix(){
-				return mBaseMat;
 			}
 		};
 	}
