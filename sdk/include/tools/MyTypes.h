@@ -1,10 +1,10 @@
 #pragma once
 #include<memory>
-#include"rect.h"
-#include"matrix4.h"
-#include"irrString.h"
-#include"Scolor.h"
-#include"quaternion.h"
+#include<irrlich/rect.h>
+#include<irrlich/matrix4.h>
+#include<irrlich/irrString.h>
+#include<irrlich/Scolor.h>
+#include<irrlich/quaternion.h>
 namespace xc{
 	typedef irr::core::vector3df vector3df;
 	typedef irr::core::vector3d<double> vector3dd;

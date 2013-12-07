@@ -1,12 +1,12 @@
 #pragma once
-#include<MyTypes.h>
+#include<tools/MyTypes.h>
 #include <vector>
-#include"ICanvas.h"
-#include"IDrawBuffers.h"
-#include"IDrawTexture.h"
+#include<drawBasement/ICanvas.h>
+#include<drawBasement/IDrawBuffers.h>
+#include<drawBasement/IDrawTexture.h>
 #include<tools/CobjContainer.hpp>
 #include <unordered_map>
-#include <IBones.h>
+#include <drawBasement/IBones.h>
 namespace xc{
 	namespace drawBasement{
 		//! ∂Øª≠mesh–≈œ¢

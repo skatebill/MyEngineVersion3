@@ -1,85 +1,9 @@
 #include"MyApp.h"
-#include "irrMath.h"
 namespace xc{
 	namespace app{
-		//! 鼠标事件
-		void myapp::onMouseEvent(EnumMouse mouse,MouseEvent ev,vector2di pos){
-			switch (mouse)
-			{
-			case xc::app::Mouse_L:
-				{
-					switch (ev)
-					{
-					case xc::app::Mouse_Click:
-						{
-							mScreenColor = color::WHITE;
-						}
-						break;
-					case xc::app::Mouse_Down:
-						{
-
-						}
-						break;
-					case xc::app::Mouse_Up:
-						{
-
-						}
-						break;
-					case xc::app::Mouse_DClick:
-						{
-							mScreenColor = color::BLACK;
-
-						}
-						break;
-					default:
-						break;
-					}
-				}
-				break;
-			case xc::app::Mouse_R:
-				{
-					switch (ev)
-					{
-					case xc::app::Mouse_Click:
-						{
-							mScreenColor = color::GREEN;
-
-						}
-						break;
-					case xc::app::Mouse_Down:
-						{
-
-						}
-						break;
-					case xc::app::Mouse_Up:
-						{
-
-						}
-						break;
-					case xc::app::Mouse_DClick:
-						{
-							mScreenColor = color::BLUE;
-
-						}
-						break;
-					default:
-						break;
-					}				
-
-				}
-				break;
-			case xc::app::Mouse_M:
-				break;
-			default:
-				break;
-			}
-		}
-		//! 键盘事件
-		void myapp::onKeyEvent(KeyEvent key,int keyCode){
-		}
 		//! 初始化
 		void myapp::onInitialData(){
-			m_Context = this->getSite()->getDrawFactory()->createDrawContext(getExtraData());
+			m_Context = this->getSite()->getDrawFactory()->getDrawContext();
 			mScreenColor = color::RED;
 
 			mIndex = this->getSite()->getDrawFactory()->createIndexBuffer();
@@ -203,7 +127,7 @@ namespace xc{
 			index->initialBuffer();
 			m_VBO2 =this->getSite()->getDrawFactory()->createVertexBufferObject(vertex,index);
 
-			mModle = getSite()->getPhraser()->loadModelFromFile("models/boblampclean.md5mesh");
+			mModle = getSite()->getPhraser()->loadModelFromFile("models/dwarf.x");
 			
 		}
 		//! 销毁
@@ -230,7 +154,7 @@ namespace xc{
 			static float y=0;
 			//mCanvas->getMatStack()->mutipleMatrix(mModle->getBaseTranslateMatrix());
 			mCanvas->getMatStack()->scale(vector3df(0.1f,0.1f,0.1f));
-			//y+=0.01;
+			y+=0.01f;
 			mCanvas->getMatStack()->rotate(y,vector3df(0,1,0));
 			mCanvas->getMatStack()->translate(vector3df(0,-1,0));
 			static float frame = 0;
@@ -244,6 +168,7 @@ namespace xc{
 			p=mCanvas->getProjectionMatrix();
 			mBoneProg->uploadMatrix(p*v*w);
 			mBoneProg->uploadBoneMatrix(mModle->getBoneAnimator()->getUniformMatrixBuffer(),mModle->getBoneAnimator()->getUniformMatrixSize());
+			mCanvas->attachShader(mBoneProg);
 			mModle->render(mCanvas.get());
 			mBoneProg->endDraw();
 			mCanvas->getMatStack()->pop();
@@ -270,6 +195,10 @@ namespace xc{
 
 			m_Context->presentData();
 			
+		}
+
+		shared_ptr<IApplication> createApp(){
+			return shared_ptr<IApplication>(new myapp);
 		}
 	}
 }

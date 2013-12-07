@@ -1,22 +1,23 @@
 #pragma once
 #include<service/file/IFile.h>
-#include<filesystem>
+#include<boost/filesystem.hpp>
 namespace xc{
 	namespace fileservice{
 		class CFile:public IFile{
 		private:
 			std::ifstream mFile;
-			std::tr2::sys::path mPath;
+			
+			boost::filesystem::path mPath;
 			unsigned long mFileSize;
 			bool mIsopened;
 		public:
 			CFile(const char* filename){
-				mPath = std::tr2::sys::path(filename);
-				if(!std::tr2::sys::exists(mPath))
+				mPath = boost::filesystem::path(filename);
+				if(!boost::filesystem::exists(mPath))
 				{
 					throw std::exception("file not exsists");
 				}
-				mFileSize = (unsigned long)std::tr2::sys::file_size(mPath);
+				mFileSize = (unsigned long)boost::filesystem::file_size(mPath);
 				mIsopened=false;
 			}
 			~CFile(){
@@ -62,12 +63,12 @@ namespace xc{
 			}
 			//! 获取文件位置名
 			virtual string getAbsolutePath(){
-				return string(std::tr2::sys::system_complete(mPath).file_string().c_str());
+				return string(boost::filesystem::system_complete(mPath).c_str());
 			}
 			//! 打开文件
 			virtual void open(){
 				if(!mFile.is_open()){
-					mFile.open(mPath,std::ios_base::binary);
+					mFile.open(mPath.c_str(),std::ios_base::binary);
 				}
 				mIsopened=true;
 			}

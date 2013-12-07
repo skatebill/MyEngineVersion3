@@ -4,8 +4,9 @@
 //
 //////////////////////////////////////////////////////////////////////////
 #pragma once
-#include "MyTypes.h"
-#include<IDrawTexture.h>
+#include <tools/MyTypes.h>
+#include<drawBasement/IDrawTexture.h>
+#include<drawBasement/IDrawBuffers.h>
 namespace xc{
 	namespace drawBasement{
 		enum EnumProgramType
@@ -23,6 +24,8 @@ namespace xc{
 			virtual void endDraw()=0;
 			//! 表明是哪一种着色器
 			virtual EnumProgramType type()=0;
+			//! 上传指定的vbo
+			virtual void uploadVerterBufferObject(IDrawVertexBufferOBject* vbo)=0;
 		};
 
 		class IBaseProgramQ:public IDrawProgram{

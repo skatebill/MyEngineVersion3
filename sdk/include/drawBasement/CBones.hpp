@@ -1,5 +1,5 @@
 #pragma once
-#include<MyTypes.h>
+#include<tools/MyTypes.h>
 #include"IBones.h"
 #define  NUM_BONES_PER_VEREX 4
 #define ZERO_MEM(a) memset(a, 0, sizeof(a))
@@ -31,7 +31,7 @@ namespace xc{
 						return;
 					}        
 				}
-				throw exception(" error building bones, maxed the bone vertex");
+				throw exception();
 			}
 		};
 
@@ -232,7 +232,7 @@ namespace xc{
 					return bn == bo->getBoneName();
 				});
 				if(dst == mBoneList.end()){
-					throw exception("bone not found");
+					throw exception();
 				}
 				return *dst;
 			}

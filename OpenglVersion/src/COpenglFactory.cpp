@@ -33,10 +33,16 @@ namespace xc{
 			return m_TextureFactory.get();
 		}
 		//! 创建绘制上下文
-		shared_ptr<IDrawCotext> COpenglFactory::createDrawContext(void* data){
-			HWND* h = (HWND*)data;
-			return shared_ptr<IDrawCotext>(new COpenglContext(*h));
+		shared_ptr<IDrawCotext> COpenglFactory::createDrawContext(HWND data){
+			if(m_DrawContext == nullptr){
+				m_DrawContext = shared_ptr<IDrawCotext>(new COpenglContext(data));
+			}
+			return m_DrawContext;
 		}
+		shared_ptr<IDrawCotext> COpenglFactory::getDrawContext(){
+			return m_DrawContext;
+		}
+
 
 		//! 创建绘制用VBO
 		shared_ptr<IDrawVertexBufferOBject> COpenglFactory::createVertexBufferObject(shared_ptr<IDrawBuffer> vbuf,

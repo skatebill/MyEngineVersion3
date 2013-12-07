@@ -92,7 +92,12 @@ namespace xc{
 			return m_WindowRect;
 		}
 		//! 使绘制目标转入指定的离屏纹理
-		bool COpenglContext::setRenderTexture(IDrawRenderTexture* tex){
+		bool COpenglContext::pushRenderTexture(IDrawRenderTexture* tex){
+			return true;
+		}
+
+		//! 弹出
+		bool COpenglContext::popRenderTexture(){
 			return true;
 		}
 		//! 清空深度缓存颜色

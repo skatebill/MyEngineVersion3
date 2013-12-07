@@ -31,6 +31,9 @@
     <Filter Include="phraser">
       <UniqueIdentifier>{bceda1c4-99c5-4e87-a1ec-1c9b98b2882b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="opengles">
+      <UniqueIdentifier>{3450e196-3a13-4916-910b-6a1335cbaaee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="winmain.cpp">
@@ -68,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="src\service\CFreeImage.cpp">
       <Filter>service\file</Filter>
+    </ClCompile>
+    <ClCompile Include="src\phraser\CAssimpPhraser.cpp">
+      <Filter>phraser</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,11 +116,11 @@
     <ClInclude Include="src\service\CFreeImage.h">
       <Filter>service\file</Filter>
     </ClInclude>
-    <ClInclude Include="src\phraser\CAssimpPhraser.hpp">
-      <Filter>phraser</Filter>
-    </ClInclude>
     <ClInclude Include="src\program\COpenglBonedProgram.hpp">
       <Filter>opengl\program</Filter>
+    </ClInclude>
+    <ClInclude Include="src\phraser\CAssimpPhraser.h">
+      <Filter>phraser</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,7 +6,7 @@
 	authored by 肖驰 @ 2013年11月17日12:22:17*/
 /************************************************************************/
 #pragma once
-#include <MyTypes.h>
+#include <tools/MyTypes.h>
 namespace xc{
 	namespace fileservice{
 		enum EnumSeekPos{
@@ -34,10 +34,6 @@ namespace xc{
 		};
 		class IWriteableFile{
 		public:
-			template<typename T>
-			void operator << (const T& src){
-				writeString(string(str).c_str());
-			}
 
 			//////////////////////////////////////////////////////////////////////////
 			//! 写入数据

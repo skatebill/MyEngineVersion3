@@ -9,6 +9,7 @@
 #include "IDrawContext.h"
 #include <viewer/ICamera.h>
 #include <viewer/IMatrixStack.h>
+#include<drawBasement/IDrawProgram.h>
 namespace xc{
 	namespace drawBasement{
 		enum EnumProjectionType{
@@ -35,7 +36,10 @@ namespace xc{
 			virtual viewer::IMatStack* getMatStack()=0;
 			//! 绘制指定物体
 			virtual void render(IDrawBuffer* vbuf,IDrawIndexBuffer* ibuf)=0;
+			//! 绘制vbo
 			virtual void render(IDrawVertexBufferOBject* vbo)=0;
+			//! 指定绘制用的program
+			virtual void attachShader(shared_ptr<IDrawProgram> program)=0;
 			//////////////////////////////////////////////////////////////////////////
 			//! 绘制指定物体
 			void render(shared_ptr<IDrawBuffer> vbuf,shared_ptr<IDrawIndexBuffer> ibuf){

@@ -1,7 +1,6 @@
 #include "CFileService.h"
 #include "CFreeImage.h"
 #include "CFile.hpp"
-#include <filesystem>
 namespace xc{
 	namespace fileservice{
 
@@ -14,7 +13,7 @@ namespace xc{
 
 		//! 从文件创建图片
 		 shared_ptr<IImage> CFileService::createImageFromFile(const char* filename){
-			 if(!std::tr2::sys::exists(std::tr2::sys::path(filename)))
+			 if(!boost::filesystem::exists(boost::filesystem::path(filename)))
 				 throw std::exception("no such image ");
 
 			 CFreeImage* image = new CFreeImage;

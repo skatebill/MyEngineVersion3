@@ -6,7 +6,7 @@
 #include "IDrawTexture.h"
 #include "IDrawContext.h"
 #include "IModel.h"
-#include "MyTypes.h"
+#include <tools/MyTypes.h>
 #include<viewer/IMatrixStack.h>
 namespace xc{
 	namespace drawBasement{
@@ -30,7 +30,9 @@ namespace xc{
 																				shared_ptr<IDrawBuffer> buf3=0,
 																				shared_ptr<IDrawBuffer> buf4=0)=0;
 			//! 创建绘制上下文
-			virtual shared_ptr<IDrawCotext> createDrawContext(void* data)=0;
+			//virtual shared_ptr<IDrawCotext> createDrawContext(void* data)=0;
+			//! 获得绘制上下文，一般一个app也只有一个绘制context
+			virtual shared_ptr<IDrawCotext> getDrawContext()=0;
 
 			//////////////////////////////////////////////////////////////////////////
 			//! 创建模型

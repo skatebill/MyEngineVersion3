@@ -1,5 +1,5 @@
 #pragma once
-#include<MyTypes.h>
+#include<tools/MyTypes.h>
 #include"IDrawTexture.h"
 namespace xc{
 	namespace drawBasement{
@@ -20,7 +20,9 @@ namespace xc{
 			//! 获取窗口大小
 			virtual rect getWindowRect()=0;
 			//! 使绘制目标转入指定的离屏纹理
-			virtual bool setRenderTexture(IDrawRenderTexture* tex)=0;
+			virtual bool pushRenderTexture(IDrawRenderTexture* tex)=0;
+			//! 弹出一层rtt
+			virtual bool popRenderTexture()=0;
 		};
 	}
 }

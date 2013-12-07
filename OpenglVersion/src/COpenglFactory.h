@@ -1,11 +1,13 @@
 #include<IDrawFactory.h>
 #include "CModel.hpp"
+#include <windows.h>
 namespace xc{
 	namespace drawBasement{
 		class COpenglFactory:public IDrawFactory{
 		private:
 			shared_ptr<IDrawTextureFactory> m_TextureFactory;
 			shared_ptr<IProgramFactory> m_ProgramFactory;
+			shared_ptr<IDrawCotext> m_DrawContext;
 		public:
 			explicit COpenglFactory();
 
@@ -20,7 +22,9 @@ namespace xc{
 			//! 获取纹理工厂
 			virtual IDrawTextureFactory* getTextureFactory();
 			//! 创建绘制上下文
-			virtual shared_ptr<IDrawCotext> createDrawContext(void* data);
+			virtual shared_ptr<IDrawCotext> createDrawContext(HWND data);
+			//! 创建绘制上下文
+			virtual shared_ptr<IDrawCotext> getDrawContext();
 			//! 创建绘制用VBO
 			virtual shared_ptr<IDrawVertexBufferOBject> createVertexBufferObject(shared_ptr<IDrawBuffer> vbuf,
 				shared_ptr<IDrawIndexBuffer> ibuf,

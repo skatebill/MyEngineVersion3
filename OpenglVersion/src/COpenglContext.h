@@ -29,7 +29,11 @@ namespace xc{
 			//! 获取窗口大小
 			virtual rect getWindowRect();
 			//! 使绘制目标转入指定的离屏纹理
-			virtual bool setRenderTexture(IDrawRenderTexture* tex);
+			virtual bool pushRenderTexture(IDrawRenderTexture* tex);
+
+			//! 弹出
+			virtual bool popRenderTexture();
+
 			void clean();
 		};
 	}

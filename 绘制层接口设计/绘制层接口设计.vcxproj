@@ -52,7 +52,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)/sdk/include;$(SolutionDir)/sdk/include/irrlich;$(SolutionDir)/sdk/include/tools;$(SolutionDir)/sdk/include/drawBasement</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/sdk/include;$(SolutionDir)/libs/;$(SolutionDir)/sdk/include/tools;$(SolutionDir)/sdk/include/drawBasement</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

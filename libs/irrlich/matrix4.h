@@ -1492,33 +1492,34 @@ namespace core
 	inline CMatrix4<T>& CMatrix4<T>::buildProjectionMatrixPerspectiveFovRH(
 			f32 fieldOfViewRadians, f32 aspectRatio, f32 zNear, f32 zFar)
 	{
-		const f64 h = reciprocal(tan(fieldOfViewRadians*0.5));
+		const f64 c2t = reciprocal(tan(fieldOfViewRadians*0.5));
 		_IRR_DEBUG_BREAK_IF(aspectRatio==0.f); //divide by zero
-		const T w = static_cast<T>(h / aspectRatio);
+		const f64 h = 2 * zNear / c2t;
+		const T w = static_cast<T>(h * aspectRatio);
 
 		_IRR_DEBUG_BREAK_IF(zNear==zFar); //divide by zero
-		M[0] = w;
+		M[0] = (T)2*zNear/w;
 		M[1] = 0;
 		M[2] = 0;
 		M[3] = 0;
 
 		M[4] = 0;
-		M[5] = (T)h;
+		M[5] = (T)2*zNear/h;
 		M[6] = 0;
 		M[7] = 0;
 
 		M[8] = 0;
 		M[9] = 0;
-		M[10] = (T)(zFar/(zNear-zFar)); // DirectX version
-//		M[10] = (T)(zFar+zNear/(zNear-zFar)); // OpenGL version
+//		M[10] = (T)(zFar/(zNear-zFar)); // DirectX version
+		M[10] = (T)(zFar+zNear)/(zNear-zFar); // OpenGL version
 		M[11] = -1;
 
 		M[12] = 0;
 		M[13] = 0;
-		M[14] = (T)(zNear*zFar/(zNear-zFar)); // DirectX version
-//		M[14] = (T)(2.0f*zNear*zFar/(zNear-zFar)); // OpenGL version
+//		M[14] = (T)(zNear*zFar/(zNear-zFar)); // DirectX version
+		M[14] = (T)(2.0f*zNear*zFar/(zNear-zFar)); // OpenGL version
 		M[15] = 0;
-
+		
 #if defined ( USE_MATRIX_TEST )
 		definitelyIdentityMatrix=false;
 #endif

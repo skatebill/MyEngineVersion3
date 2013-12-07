@@ -4,7 +4,7 @@
 	@	2013Äê11ÔÂ21ÈÕ19:12:25											*/
 /************************************************************************/
 #pragma once
-#include<MyTypes.h>
+#include<tools/MyTypes.h>
 #include<tools/CobjContainer.hpp>
 #include <vector>
 #include<exception>

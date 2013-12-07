@@ -1,7 +1,7 @@
 #pragma once
 #include"IImage.h"
 #include"IFile.h"
-#include<MyTypes.h>
+#include<tools/MyTypes.h>
 
 namespace xc{
 	namespace fileservice{

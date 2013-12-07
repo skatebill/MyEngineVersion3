@@ -1,6 +1,6 @@
 #pragma once
-#include <IDrawFactory.h>
-#include<MyTypes.h>
+#include <drawBasement/IDrawFactory.h>
+#include<tools/MyTypes.h>
 #include<service/file/IFileService.h>
 #include<viewer/IViewFactory.h>
 #include<service/phraser/IPhraseSerivce.h>

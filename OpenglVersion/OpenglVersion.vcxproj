@@ -53,7 +53,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)/sdk/include;$(SolutionDir)/libs/irrlich;$(SolutionDir)/sdk/include/tools;$(SolutionDir)/sdk/include/drawBasement;$(SolutionDir)/libs;$(ProjectDir)/src/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/sdk/include;$(SolutionDir)/sdk/include/tools;$(SolutionDir)/sdk/include/drawBasement;$(SolutionDir)/libs;$(ProjectDir)/src/;D:\boost_1_54_0\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -86,6 +86,7 @@
     <ClCompile Include="src\COpenglFactory.cpp" />
     <ClCompile Include="src\COpenglTexture.cpp" />
     <ClCompile Include="src\MyApp.cpp" />
+    <ClCompile Include="src\phraser\CAssimpPhraser.cpp" />
     <ClCompile Include="src\program\COpenglBaseProgram.cpp" />
     <ClCompile Include="src\program\COpenglProgram.cpp" />
     <ClCompile Include="src\program\COpenglProgramFactory.cpp" />
@@ -100,7 +101,7 @@
     <ClInclude Include="src\COpenglFactory.h" />
     <ClInclude Include="src\COpenglTexture.h" />
     <ClInclude Include="src\MyApp.h" />
-    <ClInclude Include="src\phraser\CAssimpPhraser.hpp" />
+    <ClInclude Include="src\phraser\CAssimpPhraser.h" />
     <ClInclude Include="src\program\COpenglBaseProgram.hpp" />
     <ClInclude Include="src\program\COpenglBonedProgram.hpp" />
     <ClInclude Include="src\program\COpenglProgram.h" />

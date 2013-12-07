@@ -1,6 +1,6 @@
 #pragma once
-#include <IModel.h>
-#include "CBones.hpp"
+#include <drawBasement/IModel.h>
+#include <drawBasement/CBones.hpp>
 namespace xc{
 	namespace drawBasement{
 
@@ -25,7 +25,7 @@ namespace xc{
 				});
 			}
 			virtual IBoneAnimator* getBoneAnimator(){
-				if(mBoneAnimator == nullptr) throw exception("no bone Animator");
+				if(mBoneAnimator == nullptr) throw exception();
 				return mBoneAnimator.get();
 			}
 		};

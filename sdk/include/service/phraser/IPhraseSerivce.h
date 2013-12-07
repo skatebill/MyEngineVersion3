@@ -1,6 +1,6 @@
 #pragma once
-#include<MyTypes.h>
-#include<IModel.h>
+#include<tools/MyTypes.h>
+#include<drawBasement/IModel.h>
 namespace xc{
 	namespace phraser{
 		class IPhraserService{

@@ -17,5 +17,9 @@ namespace xc{
 			}
 
 		};
+
+		shared_ptr<IViewerFactory> createViewFactory(){
+			return shared_ptr<IViewerFactory>(new CViewFactory);
+		}
 	}
 }

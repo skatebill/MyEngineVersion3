@@ -13,6 +13,7 @@ namespace xc{
 			shared_ptr<viewer::IMatStack> mMatStack;
 			mat4 mProjectionMat;
 			mat4 mViewTempMat;
+			shared_ptr<IDrawProgram> mCurrentProgram;
 		public:
 			COpenglCanvas(shared_ptr<IDrawCotext> context,shared_ptr<viewer::IMatStack> matStack){
 				mContext = context;
@@ -34,18 +35,18 @@ namespace xc{
 				case xc::drawBasement::type_ortho:
 					
 					if(mContext->getCoordinateType() == RIGHT_HAND){
-						mProjectionMat.buildProjectionMatrixOrthoRH((float)mRect.getWidth(),(float)mRect.getHeight(),0.001f,1000.f);
+						mProjectionMat.buildProjectionMatrixOrthoRH((float)mRect.getWidth(),(float)mRect.getHeight(),0.001f,100.f);
 					}else{
-						mProjectionMat.buildProjectionMatrixOrthoLH((float)mRect.getWidth(),(float)mRect.getHeight(),0.001f,1000.f);
+						mProjectionMat.buildProjectionMatrixOrthoLH((float)mRect.getWidth(),(float)mRect.getHeight(),0.001f,100.f);
 					}
 					
 					break;
 				case xc::drawBasement::type_perspective:
 					{
 						if(mContext->getCoordinateType() == RIGHT_HAND){
-							mProjectionMat.buildProjectionMatrixPerspectiveFovRH(mAngle,mRect.getWidth()/(float)mRect.getHeight(),0.001f,1000.f);
+							mProjectionMat.buildProjectionMatrixPerspectiveFovRH(mAngle,mRect.getWidth()/(float)mRect.getHeight(),0.001f,100.f);
 						}else{
-							mProjectionMat.buildProjectionMatrixPerspectiveFovLH(mAngle,mRect.getWidth()/(float)mRect.getHeight(),0.001f,1000.f);
+							mProjectionMat.buildProjectionMatrixPerspectiveFovLH(mAngle,mRect.getWidth()/(float)mRect.getHeight(),0.001f,100.f);
 						}
 
 					}
@@ -87,6 +88,10 @@ namespace xc{
 			//! 获取矩阵变化器
 			virtual viewer::IMatStack* getMatStack(){
 				return mMatStack.get();
+			}
+			//! 指定绘制用的program
+			virtual void attachShader(shared_ptr<IDrawProgram> program){
+				mCurrentProgram = program;
 			}
 		};
 	}

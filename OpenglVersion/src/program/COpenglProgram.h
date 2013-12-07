@@ -41,6 +41,8 @@ namespace xc{
 			//! 表明是哪一种着色器
 			virtual EnumProgramType type()=0;
 
+			//! 上传指定的vbo
+			virtual void uploadVerterBufferObject(IDrawVertexBufferOBject* vbo){}
 		};
 	}
 }

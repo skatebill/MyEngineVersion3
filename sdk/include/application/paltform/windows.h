@@ -1,21 +1,17 @@
-
-#ifndef CLASS_REG
-#error no class registerd
-#endif
 #include <windows.h>
 #include<gl/glew.h>
 #include<COpenglFactory.h>
 #include<site/site.h>
 #include<service/CFileService.h>
 #include<viewer/CViewFactory.hpp>
-#include<phraser/CAssimpPhraser.hpp>
+#include<phraser/CAssimpPhraser.h>
 #pragma comment (lib, "winmm.lib")     /* link with Windows MultiMedia lib */
 #pragma comment (lib, "opengl32.lib")  /* link with Microsoft OpenGL lib */
 #pragma comment (lib, "glu32.lib")     /* link with OpenGL Utility lib */
 namespace temp{
 	HWND hwnd;
 	const wchar_t* windowName=L"";
-	CLASS_REG abc;
+	xc::shared_ptr<xc::app::IApplication> appInti;
 	unsigned int width=800;
 	unsigned int height=600;
 
@@ -53,7 +49,7 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
 		{
 			int x=LOWORD(lParam);
 			int	y=HIWORD(lParam);
-			abc.onMouseEvent(Mouse_L,Mouse_Down,vector2di(x,y));
+			appInti->onMouseEvent(Mouse_L,Mouse_Down,vector2di(x,y));
 		}
 		break;
 	case WM_RBUTTONDOWN:
@@ -62,19 +58,19 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
 		{
 			int x=LOWORD(lParam);
 			int	y=HIWORD(lParam);
-			abc.onMouseEvent(Mouse_R,Mouse_Down,vector2di(x,y));
+			appInti->onMouseEvent(Mouse_R,Mouse_Down,vector2di(x,y));
 		}
 		break;
 	case WM_LBUTTONUP:
 		{
 			int x=LOWORD(lParam);
 			int	y=HIWORD(lParam);
-			abc.onMouseEvent(Mouse_L,Mouse_Up,vector2di(x,y));
+			appInti->onMouseEvent(Mouse_L,Mouse_Up,vector2di(x,y));
 			if(lButtonDown){
 				int ox=LOWORD(oldLButton);
 				int oy=HIWORD(oldLButton);
 				if(abs(ox-x)<xc::app::rongcha && abs(oy-y)<xc::app::rongcha){
-					abc.onMouseEvent(Mouse_L,Mouse_Click,vector2di(x,y));
+					appInti->onMouseEvent(Mouse_L,Mouse_Click,vector2di(x,y));
 				}
 			}
 			lButtonDown=false;
@@ -84,12 +80,12 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
 		{
 			int x=LOWORD(lParam);
 			int	y=HIWORD(lParam);
-			abc.onMouseEvent(Mouse_R,Mouse_Up,vector2di(x,y));
+			appInti->onMouseEvent(Mouse_R,Mouse_Up,vector2di(x,y));
 			if(rButtonDown){
 				int ox=LOWORD(oldRButton);
 				int oy=HIWORD(oldRButton);
 				if(abs(ox-x)<xc::app::rongcha && abs(oy-y)<xc::app::rongcha){
-					abc.onMouseEvent(Mouse_R,Mouse_Click,vector2di(x,y));
+					appInti->onMouseEvent(Mouse_R,Mouse_Click,vector2di(x,y));
 				}
 			}
 			rButtonDown=false;
@@ -99,14 +95,14 @@ LRESULT CALLBACK WndProc( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam 
 		{
 			int x=LOWORD(lParam);
 			int	y=HIWORD(lParam);
-			abc.onMouseEvent(Mouse_L,Mouse_DClick,vector2di(x,y));
+			appInti->onMouseEvent(Mouse_L,Mouse_DClick,vector2di(x,y));
 		}
 		break;
 	case WM_RBUTTONDBLCLK:
 		{
 			int x=LOWORD(lParam);
 			int	y=HIWORD(lParam);
-			abc.onMouseEvent(Mouse_R,Mouse_DClick,vector2di(x,y));
+			appInti->onMouseEvent(Mouse_R,Mouse_DClick,vector2di(x,y));
 		}
 		break;
 	default:
@@ -148,13 +144,15 @@ void create( HINSTANCE hInstance ,int w,int h)
 		NULL );
 	if( !temp::hwnd )
 		return;
-	temp::abc.setExtra(&temp::hwnd);
+	temp::appInti->setExtra(&temp::hwnd);
 	xc::ISiteEdieable* s=new xc::ISiteEdieable;
-	temp::abc.installSite(xc::shared_ptr<xc::ISite>(s));
-	s->installDrawFactory(xc::shared_ptr<xc::drawBasement::IDrawFactory>(new xc::drawBasement::COpenglFactory));
+	temp::appInti->installSite(xc::shared_ptr<xc::ISite>(s));
+	auto df = new xc::drawBasement::COpenglFactory;
+	df->createDrawContext(temp::hwnd);
+	s->installDrawFactory(xc::shared_ptr<xc::drawBasement::IDrawFactory>(df));
 	s->installFileService(xc::shared_ptr<xc::fileservice::IFileService>(new xc::fileservice::CFileService));
 	s->installViewerFactory(xc::shared_ptr<xc::viewer::IViewerFactory>(new xc::viewer::CViewFactory));
-	s->installPhraser(xc::shared_ptr<xc::phraser::IPhraserService>(new xc::phraser::CPhraserService(s->getFileService(),s->getDrawFactory())));
+	s->installPhraser(xc::phraser::createAssimpPhraserService(s->getFileService(),s->getDrawFactory()));
 
 	ShowWindow( temp::hwnd, SW_SHOW );
 }
@@ -165,9 +163,10 @@ void create( HINSTANCE hInstance ,int w,int h)
 //--------------------------------------------------------------------------------------
 int WINAPI wWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow )
 {
-	temp::abc.onInitialWindow(temp::setWindowName,temp::setWindowSize);
+	temp::appInti = xc::app::createApp();
+	temp::appInti->onInitialWindow(temp::setWindowName,temp::setWindowSize);
 	create(hInstance,temp::width,temp::height);
-	temp::abc.onInitialData();
+	temp::appInti->onInitialData();
 	MSG msg = {0};
 	while( WM_QUIT != msg.message )
 	{
@@ -178,7 +177,7 @@ int WINAPI wWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdL
 		}
 		else
 		{
-			temp::abc.onRender();
+			temp::appInti->onRender();
 		}
 
 	}

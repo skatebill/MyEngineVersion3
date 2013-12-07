@@ -1,13 +1,12 @@
-#pragma once
-#include <MyTypes.h>
+#include"CAssimpPhraser.h"
 #include <service/phraser/IPhraseSerivce.h>
 #include <service/file/IFileService.h>
 #include <assimp/Importer.hpp>
 #include <assimp/postprocess.h>
 #include <assimp/scene.h>
-#include <IDrawFactory.h>
-#include <CBones.hpp>
-#include <CModel.hpp>
+#include <drawBasement/IDrawFactory.h>
+#include <drawBasement/CBones.hpp>
+#include <drawBasement/CModel.hpp>
 #ifndef ZeroMemory
 #define ZeroMemory(Destination,Length) memset((Destination),0,(Length))
 #endif
@@ -135,7 +134,7 @@ namespace xc{
 					linustyle=false;
 				}
 				if(p == -1){
-					throw exception("error load mode-- filepath error");
+					throw exception();
 				}
 				string dir = path.subString(0,p);
 				if(!linustyle)
@@ -157,7 +156,7 @@ namespace xc{
 						
 						model->mMatarials.insert(make_pair(idx,mat));
 					}else{
-						throw exception("error load mode-- muti textures error");
+						throw exception();
 					}
 				}
 				return shared_ptr<drawBasement::IModel>(model);
@@ -173,7 +172,7 @@ namespace xc{
 						return;
 					}        
 				}
-				throw exception(" error building bones, maxed the bone vertex");
+				throw exception();
 			}
 			const aiNodeAnim* FindNodeAnim(const aiAnimation* pAnimation, const string NodeName)
 			{
@@ -256,6 +255,8 @@ namespace xc{
 				return r;
 			}
 		};
-
+		shared_ptr<IPhraserService> createAssimpPhraserService(shared_ptr<fileservice::IFileService> f,shared_ptr<drawBasement::IDrawFactory> d){
+			return shared_ptr<IPhraserService>(new CPhraserService(f,d));
+		}
 	}
 }

@@ -4,7 +4,7 @@
 	@ 2013Äê11ÔÂ13ÈÕ22:10:38											*/
 /************************************************************************/
 #pragma once
-#include<MyTypes.h>
+#include<tools/MyTypes.h>
 namespace xc{
 	namespace viewer{
 		class ICamera{
