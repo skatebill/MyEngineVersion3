@@ -36,10 +36,16 @@ namespace xc{
 		public:
 
 			//////////////////////////////////////////////////////////////////////////
+			//! 打开文件
+			virtual void open()=0;
+			//! 关闭文件
+			virtual void close()=0;
 			//! 写入数据
 			virtual void write(char* data,int size)=0;
 			//! 写入字符串
 			virtual void writeString(const char* str)=0;
+			//! 清空文件(慎用)
+			virtual void clear()=0;
 
 		};
 	}

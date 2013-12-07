@@ -30,6 +30,7 @@ namespace xc{
 	}
 
 	typedef irr::core::stringc string;
+	typedef irr::core::stringw stringw;
 	typedef irr::core::recti rect;
 	typedef irr::core::recti recti;
 	typedef irr::core::rectf rectf;

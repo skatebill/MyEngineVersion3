@@ -12,6 +12,8 @@ namespace xc{
 			virtual shared_ptr<IImage> createImageFromFile(const char* filename);
 			//! 读取文件
 			virtual shared_ptr<IFile> createReadableFile(const char* filename);
+			//! 创建可以写入的文件
+			virtual shared_ptr<IWriteableFile> createWriteAbleFile(const char* filename);
 
 		};
 	}

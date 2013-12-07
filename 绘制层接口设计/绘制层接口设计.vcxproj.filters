@@ -40,6 +40,12 @@
     <Filter Include="pharser">
       <UniqueIdentifier>{bf6f141d-1f00-440c-8c6c-38f6729386c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="绘制底层\particle system">
+      <UniqueIdentifier>{e889e7e0-f82f-4813-ae81-a2f016147f5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logservice">
+      <UniqueIdentifier>{ecc722c3-1d92-4926-b2b3-2133b2f1cac2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -134,6 +140,18 @@
     </ClInclude>
     <ClInclude Include="..\sdk\include\drawBasement\CBones.hpp">
       <Filter>绘制底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\particlesystem\IParticleFactory.h">
+      <Filter>绘制底层\particle system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\particlesystem\IParticleSystem.h">
+      <Filter>绘制底层\particle system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\service\log\ILogService.h">
+      <Filter>logservice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\service\log\CLogServcice.h">
+      <Filter>logservice</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

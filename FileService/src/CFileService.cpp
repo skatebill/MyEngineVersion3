@@ -69,5 +69,9 @@ namespace xc{
 		 shared_ptr<IFile> CFileService::createReadableFile(const char* filename){
 			 return shared_ptr<IFile>(new CFile(filename));
 		 }
+		 //! 创建可以写入的文件
+		 shared_ptr<IWriteableFile> CFileService::createWriteAbleFile(const char* filename){
+			 return shared_ptr<IWriteableFile>(new CWriteAbleFile(filename));
+		 }
 	}
 }
