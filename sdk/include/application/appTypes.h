@@ -17,5 +17,10 @@ namespace xc{
 			Mouse_Up,
 			Mouse_DClick
 		};
+		enum KeyEvent
+		{
+			Key_Down,
+			Key_Up
+		};
 	}
 }

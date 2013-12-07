@@ -7,8 +7,8 @@
 #pragma once
 #include"IobjContainer.hpp"
 namespace xc{
-	template<typename T,typename CONTAINER=std::list<T>>
-	class CobjContainer:public IobjContainer<T,CONTAINER>{
+	template<typename C,typename T,typename CONTAINER=std::list<T>>
+	class CobjContainer:public C{
 	private:
 		CONTAINER m_container;
 	public:

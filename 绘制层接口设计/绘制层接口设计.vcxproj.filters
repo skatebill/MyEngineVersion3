@@ -19,14 +19,32 @@
     <Filter Include="组件">
       <UniqueIdentifier>{ad9994d8-ffcf-47ea-abae-446c4068dfb4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="service">
-      <UniqueIdentifier>{e7f8ca58-aead-4c32-99b1-4f5d884a7a2e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="绘制底层">
       <UniqueIdentifier>{53d8e82a-2498-403d-bf61-63dbe0f1fdbf}</UniqueIdentifier>
     </Filter>
     <Filter Include="应用层">
       <UniqueIdentifier>{b51feef4-57a1-4095-9a6f-f2742fb03a72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="应用层\application">
+      <UniqueIdentifier>{c737a4b0-7bda-43f2-bd26-2c975dd412ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="应用层\site">
+      <UniqueIdentifier>{b491ca8c-44f4-4bb4-abc4-6ea06110c08b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Viewer">
+      <UniqueIdentifier>{3b12851a-ed4c-45ea-adb8-c584246e7ef2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fileservice">
+      <UniqueIdentifier>{e7f8ca58-aead-4c32-99b1-4f5d884a7a2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pharser">
+      <UniqueIdentifier>{bf6f141d-1f00-440c-8c6c-38f6729386c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="绘制底层\particle system">
+      <UniqueIdentifier>{e889e7e0-f82f-4813-ae81-a2f016147f5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logservice">
+      <UniqueIdentifier>{ecc722c3-1d92-4926-b2b3-2133b2f1cac2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -39,17 +57,8 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\sdk\include\tools\listener.hpp">
-      <Filter>组件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\sdk\include\tools\objContainer.hpp">
-      <Filter>组件</Filter>
-    </ClInclude>
     <ClInclude Include="..\sdk\include\tools\XCBuffers.hpp">
       <Filter>组件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\sdk\include\drawBasement\IDrawer3D.h">
-      <Filter>绘制底层</Filter>
     </ClInclude>
     <ClInclude Include="..\sdk\include\drawBasement\IDrawProgram.h">
       <Filter>绘制底层</Filter>
@@ -70,19 +79,79 @@
       <Filter>绘制底层</Filter>
     </ClInclude>
     <ClInclude Include="..\sdk\include\service\file\IFileService.h">
-      <Filter>service</Filter>
+      <Filter>fileservice</Filter>
     </ClInclude>
     <ClInclude Include="..\sdk\include\service\file\IImage.h">
-      <Filter>service</Filter>
+      <Filter>fileservice</Filter>
     </ClInclude>
     <ClInclude Include="..\sdk\include\tools\dllCfg.h">
       <Filter>组件</Filter>
     </ClInclude>
-    <ClInclude Include="..\sdk\include\application\IApplication.h">
-      <Filter>应用层</Filter>
-    </ClInclude>
     <ClInclude Include="..\sdk\include\application\appTypes.h">
-      <Filter>应用层</Filter>
+      <Filter>应用层\application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\application\IApplication.h">
+      <Filter>应用层\application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\application\paltform\windows.h">
+      <Filter>应用层\application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\tools\Ilistener.hpp">
+      <Filter>组件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\tools\IobjContainer.hpp">
+      <Filter>组件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\tools\Clistener.hpp">
+      <Filter>组件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\tools\CobjContainer.hpp">
+      <Filter>组件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\viewer\ICamera.h">
+      <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\viewer\IMatrixStack.h">
+      <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\viewer\IViewFactory.h">
+      <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\viewer\CViewFactory.hpp">
+      <Filter>Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\site\site.h">
+      <Filter>应用层\site</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\ICanvas.h">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\service\file\IFile.h">
+      <Filter>fileservice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\IModel.h">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\service\phraser\IPhraseSerivce.h">
+      <Filter>pharser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\IBones.h">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\CBones.hpp">
+      <Filter>绘制底层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\particlesystem\IParticleFactory.h">
+      <Filter>绘制底层\particle system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\drawBasement\particlesystem\IParticleSystem.h">
+      <Filter>绘制底层\particle system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\service\log\ILogService.h">
+      <Filter>logservice</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\include\service\log\CLogServcice.h">
+      <Filter>logservice</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +160,15 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk\include\viewer\CCamera.hpp">
+      <Filter>Viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk\include\viewer\CMatStack.hpp">
+      <Filter>Viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sdk\include\drawBasement\CModel.hpp">
+      <Filter>绘制底层</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

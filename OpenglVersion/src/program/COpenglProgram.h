@@ -13,11 +13,17 @@ namespace xc{
 			GLuint m_Program;
 
 		public:
+			//! 初始化shader
+			virtual void initialProgram()=0;
+			//! 初始化handle
+			virtual void initialHandles()=0;
+
 			COpenglProgram():m_Program(0){
 				m_Program = glCreateProgram();
 				if(m_Program == 0){
 					throw std::exception("error createProgram");
 				}
+				glUseProgram(m_Program);
 			}
 			~COpenglProgram(){
 				glDeleteProgram(m_Program);
@@ -35,6 +41,8 @@ namespace xc{
 			//! 表明是哪一种着色器
 			virtual EnumProgramType type()=0;
 
+			//! 上传指定的vbo
+			virtual void uploadVerterBufferObject(IDrawVertexBufferOBject* vbo){}
 		};
 	}
 }

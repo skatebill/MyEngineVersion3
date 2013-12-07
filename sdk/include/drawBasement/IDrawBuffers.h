@@ -7,6 +7,30 @@
 #pragma once
 namespace xc{
 	namespace drawBasement{
+		//! 图元类型枚举
+		enum EnumPrimityType
+		{
+			EPT_DOTS=0,
+			EPT_LINES,
+			EPT_LINE_STRIP,
+			EPT_TRIANGLES,
+			EPT_TRIANGLE_STRIP
+		};
+		enum EnumIndexType{
+			EIT_UBYTE=1,
+			EIT_USHORT=2,
+			EIT_UINT=4
+		};
+		enum EnumDataType{
+			EDT_FLOAT,
+			EDT_UINT,
+			EDT_INT,
+			EDT_DOUBLE,
+			EDT_USHORT,
+			EDT_SHORT,
+			EDT_UBYTE,
+			EDT_BYTE
+		};
 		class IDrawBuffer{
 		public:
 			//! lock out 内部的缓冲区（再更改数据之后）
@@ -23,19 +47,8 @@ namespace xc{
 			virtual void unUse(int slot)=0;
 			//! 初始化缓冲区(在数据更改后调用一下可以上传新数据到显存中)
 			virtual void initialBuffer()=0;
-		};
-		//! 图元类型枚举
-		enum EnumPrimityType
-		{
-			EPT_DOTS=0,
-			EPT_LINES,
-			EPT_LINE_STRIP,
-			EPT_TRIANGLES,
-			EPT_TRIANGLE_STRIP
-		};
-		enum EnumIndexType{
-			EIT_UINT=0,
-			EIT_UBYTE
+			//! 设置数据类型
+			virtual void setDataType(EnumDataType t)=0;
 		};
 		static const unsigned short UINT_SIZE = sizeof(unsigned int);
 		static const unsigned short UBYTE_SIZE = sizeof(unsigned char);
@@ -63,6 +76,20 @@ namespace xc{
 			virtual EnumPrimityType getPrimityType()=0;
 			//! 设置图元类型
 			virtual void setPrimityType(EnumPrimityType type)=0;
+			//! 获取数据类型
+			virtual EnumIndexType getIndexType()=0;
+		};
+
+		class IDrawVertexBufferOBject{
+		public:
+			//! 使用此缓冲区
+			virtual void use()=0;
+			//! 使用完毕
+			virtual void unUse()=0;
+			//! 获取需要绘制的索引个数
+			virtual unsigned int getIndexNums()=0;
+			//! 获取需要绘制的图元类型
+			virtual EnumPrimityType getPrimityType()=0;
 			//! 获取数据类型
 			virtual EnumIndexType getIndexType()=0;
 		};

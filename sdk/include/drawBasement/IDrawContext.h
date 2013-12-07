@@ -1,10 +1,16 @@
 #pragma once
-#include<MyTypes.h>
+#include<tools/MyTypes.h>
 #include"IDrawTexture.h"
 namespace xc{
 	namespace drawBasement{
+		enum EnumCoordinateType{
+			RIGHT_HAND,
+			LEFT_HAND
+		};
 		class IDrawCotext{
 		public:
+			//! 获取坐标系类型
+			virtual EnumCoordinateType getCoordinateType()=0;
 			//! 提交后备缓冲的数据到屏幕
 			virtual void presentData()=0;
 			//! 清空屏幕颜色
@@ -14,7 +20,9 @@ namespace xc{
 			//! 获取窗口大小
 			virtual rect getWindowRect()=0;
 			//! 使绘制目标转入指定的离屏纹理
-			virtual bool setRenderTexture(IDrawRenderTexture* tex)=0;
+			virtual bool pushRenderTexture(IDrawRenderTexture* tex)=0;
+			//! 弹出一层rtt
+			virtual bool popRenderTexture()=0;
 		};
 	}
 }

@@ -1,6 +1,8 @@
 #pragma once
 #include<IDrawBuffers.h>
 #include<gl/glew.h>
+#include <vector>
+#include<MyTypes.h>
 namespace xc{
 	namespace drawBasement{
 		class COpenglBuffer:public IDrawBuffer{
@@ -9,6 +11,7 @@ namespace xc{
 			unsigned int m_ElementSize;
 			unsigned char* m_Buff;
 			GLuint m_VBO;
+			GLuint mDataType;
 		public:
 			explicit COpenglBuffer();
 			~COpenglBuffer();
@@ -32,6 +35,39 @@ namespace xc{
 			virtual void initialBuffer();
 			//! 释放资源
 			virtual void unUse(int slot);
+
+			//! 设置数据类型
+			virtual void setDataType(EnumDataType t){
+				switch (t)
+				{
+				case xc::drawBasement::EDT_FLOAT:
+					mDataType = GL_FLOAT;
+					break;
+				case xc::drawBasement::EDT_UINT:
+					mDataType = GL_UNSIGNED_INT;
+					break;
+				case xc::drawBasement::EDT_INT:
+					mDataType = GL_INT;
+					break;
+				case xc::drawBasement::EDT_DOUBLE:
+					mDataType = GL_DOUBLE;
+					break;
+				case xc::drawBasement::EDT_USHORT:
+					mDataType = GL_UNSIGNED_SHORT;
+					break;
+				case xc::drawBasement::EDT_SHORT:
+					mDataType = GL_SHORT;
+					break;
+				case xc::drawBasement::EDT_UBYTE:
+					mDataType = GL_UNSIGNED_BYTE;
+					break;
+				case xc::drawBasement::EDT_BYTE:
+					mDataType = GL_BYTE;
+					break;
+				default:
+					break;
+				}
+			}
 		};
 
 		class COpenglIndexBuffer:virtual public COpenglBuffer,virtual public IDrawIndexBuffer{
@@ -42,6 +78,7 @@ namespace xc{
 			EnumIndexType m_EIT;
 		public:
 			explicit COpenglIndexBuffer();
+			~COpenglIndexBuffer();
 			//! 在指定位置使用此缓冲
 			virtual void use();
 			//! 初始化缓冲区
@@ -83,6 +120,33 @@ namespace xc{
 			virtual void unUse(){
 				
 			}
+		};
+		class COpenglVertexBufferObject:public IDrawVertexBufferOBject{
+		private:
+			std::vector<shared_ptr<IDrawBuffer>> m_vertexList;
+			shared_ptr<IDrawIndexBuffer> m_indexBuffer;
+			GLuint m_VBO;
+		public:
+			COpenglVertexBufferObject();
+			~COpenglVertexBufferObject();
+			//! 开始初始化
+			void initialStart();
+			//! 结束初始化
+			void initialEnd();
+			//! 绑定顶点缓冲
+			void addVertexBuf(shared_ptr<IDrawBuffer> vbuf);
+			//! 绑定索引缓冲
+			void bindIndexBuf(shared_ptr<IDrawIndexBuffer> ibuf);
+			//! 使用此缓冲区
+			virtual void use();
+			//! 使用完毕
+			virtual void unUse();
+			//! 获取需要绘制的索引个数
+			virtual unsigned int getIndexNums();
+			//! 获取需要绘制的图元类型
+			virtual EnumPrimityType getPrimityType();
+			//! 获取数据类型
+			virtual EnumIndexType getIndexType();
 		};
 	}
 }

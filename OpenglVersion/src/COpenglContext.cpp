@@ -62,6 +62,13 @@ namespace xc{
 			wglMakeCurrent(m_DC,m_RC);
 			glewInit();
 			glClearColor(m_ClearColor.r,m_ClearColor.g,m_ClearColor.b,m_ClearColor.a);
+			glEnable(GL_DEPTH_TEST);
+			glClearDepth(1.0f);
+			glFrontFace(GL_CW);
+			glCullFace(GL_FRONT);
+			glEnable(GL_CULL_FACE);
+			glEnable(GL_BLEND);
+			glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
 		}
 		void COpenglContext::clean(){
 			wglMakeCurrent(m_DC,NULL);
@@ -85,7 +92,12 @@ namespace xc{
 			return m_WindowRect;
 		}
 		//! 使绘制目标转入指定的离屏纹理
-		bool COpenglContext::setRenderTexture(IDrawRenderTexture* tex){
+		bool COpenglContext::pushRenderTexture(IDrawRenderTexture* tex){
+			return true;
+		}
+
+		//! 弹出
+		bool COpenglContext::popRenderTexture(){
 			return true;
 		}
 		//! 清空深度缓存颜色
