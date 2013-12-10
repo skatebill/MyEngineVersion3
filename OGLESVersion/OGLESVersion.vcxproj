@@ -89,8 +89,12 @@
     <ClInclude Include="src\COGLESContext.h" />
     <ClInclude Include="src\COGLESFactory.h" />
     <ClInclude Include="src\COGLESTexture.h" />
+    <ClInclude Include="src\particle\CParticleFactory.h" />
+    <ClInclude Include="src\particle\CParticleSystem.h" />
+    <ClInclude Include="src\particle\CRectFireParticle.h" />
     <ClInclude Include="src\program\COGLESBaseProgram.hpp" />
     <ClInclude Include="src\program\COGLESBonedProgram.hpp" />
+    <ClInclude Include="src\program\COGLESPosColorProgram.hpp" />
     <ClInclude Include="src\program\COGLESProgram.h" />
     <ClInclude Include="src\program\COGLESProgramFactory.h" />
     <ClInclude Include="src\program\COGLESTexturedProgram.hpp" />
@@ -112,6 +116,7 @@
     <ClCompile Include="src\COGLESContext.cpp" />
     <ClCompile Include="src\COGLESFactory.cpp" />
     <ClCompile Include="src\COGLESTexture.cpp" />
+    <ClCompile Include="src\particle\CParticleSystem.cpp" />
     <ClCompile Include="src\program\COGLESBaseProgram.cpp" />
     <ClCompile Include="src\program\COGLESProgram.cpp" />
     <ClCompile Include="src\program\COGLESProgramFactory.cpp" />

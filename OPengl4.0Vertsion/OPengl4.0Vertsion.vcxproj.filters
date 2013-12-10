@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{cccf1c9e-e06a-4a29-9c43-937a2b897313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\program">
+      <UniqueIdentifier>{cb1a1ac7-7f23-4da2-b4c9-44ed6d51def7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\particles">
+      <UniqueIdentifier>{2149c1a5-bdf0-495e-825e-0c696561a559}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OPengl4.0Vertsion.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COpenglBuffer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COpenglCanvas.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COpenglContext.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COpenglFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COpenglTexture.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MyApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\program\COpenglBaseProgram.hpp">
+      <Filter>src\program</Filter>
+    </ClInclude>
+    <ClInclude Include="src\program\COpenglBonedProgram.hpp">
+      <Filter>src\program</Filter>
+    </ClInclude>
+    <ClInclude Include="src\program\COpenglProgram.h">
+      <Filter>src\program</Filter>
+    </ClInclude>
+    <ClInclude Include="src\program\COpenglProgramFactory.h">
+      <Filter>src\program</Filter>
+    </ClInclude>
+    <ClInclude Include="src\program\COpenglTexturedProgram.hpp">
+      <Filter>src\program</Filter>
+    </ClInclude>
+    <ClInclude Include="src\particles\CParticleSystem.h">
+      <Filter>src\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\particles\CRectFireParticle.h">
+      <Filter>src\particles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\particles\CParticleFactory.h">
+      <Filter>src\particles</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="OPengl4.0Vertsion.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COpenglBuffer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COpenglCanvas.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COpenglContext.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COpenglFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COpenglTexture.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MyApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\program\COpenglBaseProgram.cpp">
+      <Filter>src\program</Filter>
+    </ClCompile>
+    <ClCompile Include="src\program\COpenglProgram.cpp">
+      <Filter>src\program</Filter>
+    </ClCompile>
+    <ClCompile Include="src\program\COpenglProgramFactory.cpp">
+      <Filter>src\program</Filter>
+    </ClCompile>
+    <ClCompile Include="src\particles\CParticleSystem.cpp">
+      <Filter>src\particles</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

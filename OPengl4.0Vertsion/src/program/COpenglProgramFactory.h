@@ -2,7 +2,7 @@
 #include<drawBasement/IDrawProgram.h>
 namespace xc{
 	namespace drawBasement{
-		class COGLESProgramFactory:public IProgramFactory{
+		class COpenglProgramFactory:public IProgramFactory{
 		public:
 			//! 创建最基本的shader
 			virtual shared_ptr<IBaseProgram> createBaseProgram();
@@ -12,9 +12,9 @@ namespace xc{
 			virtual shared_ptr<IBasedTextureProgramQ> createBaseQuickTextureProgram();
 			//! 创建快速版本的骨骼动画shader
 			virtual shared_ptr<IBonedProgramQ> createBaseQuickBonedProgram();
+
 			//! 创建快速版本的顶点颜色shader
 			virtual shared_ptr<IPosColorProgramQ> createBaseQuickPosColorProgram();
-
 		};
 	}
 }

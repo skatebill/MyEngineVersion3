@@ -19,26 +19,11 @@
     <Filter Include="opengl\program">
       <UniqueIdentifier>{3347a295-5189-465a-a9bd-6329a1574c23}</UniqueIdentifier>
     </Filter>
-    <Filter Include="service">
-      <UniqueIdentifier>{a83cc635-9169-4ee4-8c10-043289c86233}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDK">
-      <UniqueIdentifier>{8d2ccab7-a1ca-43e9-9a1c-7de258cde650}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="service\file">
-      <UniqueIdentifier>{a30f7a61-c945-49ce-8aef-35a6c8643690}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="phraser">
-      <UniqueIdentifier>{bceda1c4-99c5-4e87-a1ec-1c9b98b2882b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="opengles">
-      <UniqueIdentifier>{3450e196-3a13-4916-910b-6a1335cbaaee}</UniqueIdentifier>
+    <Filter Include="opengl\pariticle">
+      <UniqueIdentifier>{97d87926-47d4-45dd-aa28-5ef8e27b7943}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="winmain.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\program\COpenglProgram.cpp">
       <Filter>opengl\program</Filter>
     </ClCompile>
@@ -47,9 +32,6 @@
     </ClCompile>
     <ClCompile Include="src\program\COpenglProgramFactory.cpp">
       <Filter>opengl\program</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MyApp.cpp">
-      <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\COpenglBuffer.cpp">
       <Filter>opengl</Filter>
@@ -66,15 +48,6 @@
     <ClCompile Include="src\COpenglCanvas.cpp">
       <Filter>opengl</Filter>
     </ClCompile>
-    <ClCompile Include="src\service\CFileService.cpp">
-      <Filter>service\file</Filter>
-    </ClCompile>
-    <ClCompile Include="src\service\CFreeImage.cpp">
-      <Filter>service\file</Filter>
-    </ClCompile>
-    <ClCompile Include="src\phraser\CAssimpPhraser.cpp">
-      <Filter>phraser</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\program\COpenglProgram.h">
@@ -82,9 +55,6 @@
     </ClInclude>
     <ClInclude Include="src\program\COpenglProgramFactory.h">
       <Filter>opengl\program</Filter>
-    </ClInclude>
-    <ClInclude Include="src\MyApp.h">
-      <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="src\COpenglBuffer.h">
       <Filter>opengl</Filter>
@@ -107,20 +77,8 @@
     <ClInclude Include="src\program\COpenglTexturedProgram.hpp">
       <Filter>opengl\program</Filter>
     </ClInclude>
-    <ClInclude Include="src\service\CFile.hpp">
-      <Filter>service\file</Filter>
-    </ClInclude>
-    <ClInclude Include="src\service\CFileService.h">
-      <Filter>service\file</Filter>
-    </ClInclude>
-    <ClInclude Include="src\service\CFreeImage.h">
-      <Filter>service\file</Filter>
-    </ClInclude>
     <ClInclude Include="src\program\COpenglBonedProgram.hpp">
       <Filter>opengl\program</Filter>
-    </ClInclude>
-    <ClInclude Include="src\phraser\CAssimpPhraser.h">
-      <Filter>phraser</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

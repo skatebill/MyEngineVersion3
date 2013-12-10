@@ -564,6 +564,14 @@ namespace video
 		bool operator != (const SColorf& other){
 			return !this->operator==(other);
 		}
+		SColorf operator * (const f32 factor){
+			SColorf temp;
+			temp.r = r * factor;
+			temp.g = g * factor;
+			temp.b = b * factor;
+			temp.a = a * factor;
+			return temp;
+		}
 		//! Returns the alpha component of the color in the range 0.0 (transparent) to 1.0 (opaque)
 		f32 getAlpha() const { return a; }
 

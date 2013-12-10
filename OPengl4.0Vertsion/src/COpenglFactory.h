@@ -1,17 +1,15 @@
-#pragma once
 #include<drawBasement/IDrawFactory.h>
-#include<drawBasement/CModel.hpp>
-#include"particle/CParticleFactory.h"
+#include <drawBasement/CModel.hpp>
+#include <windows.h>
 namespace xc{
 	namespace drawBasement{
-		class COGLESFactory:public IDrawFactory{
+		class COpenglFactory:public IDrawFactory{
 		private:
 			shared_ptr<IDrawTextureFactory> m_TextureFactory;
 			shared_ptr<IProgramFactory> m_ProgramFactory;
 			shared_ptr<IDrawCotext> m_DrawContext;
-			particlesystem::CParticleFactory mParticleFactory;
 		public:
-			explicit COGLESFactory();
+			explicit COpenglFactory();
 
 			//! 创建指定类型的着色器
 			virtual IProgramFactory* getProgramFactory();
@@ -24,8 +22,8 @@ namespace xc{
 			//! 获取纹理工厂
 			virtual IDrawTextureFactory* getTextureFactory();
 			//! 创建绘制上下文
-			virtual shared_ptr<IDrawCotext> createDrawContext(rect data);
-			//! 获取绘制上下文
+			virtual shared_ptr<IDrawCotext> createDrawContext(HWND data);
+			//! 创建绘制上下文
 			virtual shared_ptr<IDrawCotext> getDrawContext();
 			//! 创建绘制用VBO
 			virtual shared_ptr<IDrawVertexBufferOBject> createVertexBufferObject(shared_ptr<IDrawBuffer> vbuf,
@@ -39,8 +37,9 @@ namespace xc{
 			virtual shared_ptr<IModel> createModel(){
 				return shared_ptr<IModel>(new CModel);
 			}
-			xc::particlesystem::IParticleFactory* getParticleFacotry(){
-				return &mParticleFactory;
+			//////////////////////////////////////////////////////////////////////////
+			virtual xc::particlesystem::IParticleFactory* getParticleFacotry(){
+				return 0;
 			}
 		};
 	}

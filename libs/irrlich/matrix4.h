@@ -1494,7 +1494,7 @@ namespace core
 	{
 		const f64 c2t = reciprocal(tan(fieldOfViewRadians*0.5));
 		_IRR_DEBUG_BREAK_IF(aspectRatio==0.f); //divide by zero
-		const f64 h = 2 * zNear / c2t;
+		const T h = 2 * zNear / (T)c2t;
 		const T w = static_cast<T>(h * aspectRatio);
 
 		_IRR_DEBUG_BREAK_IF(zNear==zFar); //divide by zero

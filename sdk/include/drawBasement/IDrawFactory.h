@@ -8,6 +8,7 @@
 #include "IModel.h"
 #include <tools/MyTypes.h>
 #include<viewer/IMatrixStack.h>
+#include<drawBasement/particlesystem/IParticleFactory.h>
 namespace xc{
 	namespace drawBasement{
 		class IDrawFactory{
@@ -37,6 +38,8 @@ namespace xc{
 			//////////////////////////////////////////////////////////////////////////
 			//! 创建模型
 			virtual shared_ptr<IModel> createModel()=0;
+			//////////////////////////////////////////////////////////////////////////
+			virtual xc::particlesystem::IParticleFactory* getParticleFacotry()=0;
 		};
 	}
 }

@@ -14,7 +14,8 @@ namespace xc{
 			EPT_BaseType=0,
 			EPT_Textured,
 			EPT_Normaled,
-			EPT_Boned
+			EPT_Boned,
+			EPT_PosColor
 		};
 		class IDrawProgram{
 		public:
@@ -55,6 +56,12 @@ namespace xc{
 			//! 上传变换矩阵
 			virtual void uploadMatrix(mat4f mat)=0;
 		};
+		class IPosColorProgramQ:public IDrawProgram{
+		public:
+			//! 上传变换矩阵
+			virtual void uploadMatrix(mat4f mat)=0;
+		};
+
 		class IBonedProgramQ:public IBasedTextureProgramQ{
 		public:
 			//! 上传骨骼矩阵
@@ -71,6 +78,8 @@ namespace xc{
 			virtual shared_ptr<IBasedTextureProgramQ> createBaseQuickTextureProgram()=0;
 			//! 创建快速版本的骨骼动画shader
 			virtual shared_ptr<IBonedProgramQ> createBaseQuickBonedProgram()=0;
+			//! 创建快速版本的顶点颜色shader
+			virtual shared_ptr<IPosColorProgramQ> createBaseQuickPosColorProgram()=0;
 		};
 
 	}

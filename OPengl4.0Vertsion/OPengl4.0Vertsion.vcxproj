@@ -11,19 +11,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{89212139-27DA-4C27-A36B-DB765D510796}</ProjectGuid>
+    <ProjectGuid>{8F761234-7490-45BF-B6CE-E0A3A1E5DB19}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>OpenglVersion</RootNamespace>
+    <RootNamespace>OPengl40Vertsion</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -41,36 +41,37 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IntDir>$(SolutionDir)build\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)/sdk/include;$(SolutionDir)/sdk/include/tools;$(SolutionDir)/sdk/include/drawBasement;$(SolutionDir)/libs;$(ProjectDir)/src/;D:\boost_1_54_0\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;OPENGL40VERTSION_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)/sdk/include;$(SolutionDir)/libs/;</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <CallingConvention>Cdecl</CallingConvention>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)/libs;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;glew32s.lib;FreeImage.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32.lib;glew32s.lib;glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;OPENGL40VERTSION_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -80,26 +81,47 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\COpenglBuffer.cpp" />
-    <ClCompile Include="src\COpenglContext.cpp" />
-    <ClCompile Include="src\COpenglCanvas.cpp" />
-    <ClCompile Include="src\COpenglFactory.cpp" />
-    <ClCompile Include="src\COpenglTexture.cpp" />
-    <ClCompile Include="src\program\COpenglBaseProgram.cpp" />
-    <ClCompile Include="src\program\COpenglProgram.cpp" />
-    <ClCompile Include="src\program\COpenglProgramFactory.cpp" />
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="OPengl4.0Vertsion.h" />
     <ClInclude Include="src\COpenglBuffer.h" />
-    <ClInclude Include="src\COpenglContext.h" />
     <ClInclude Include="src\COpenglCanvas.h" />
+    <ClInclude Include="src\COpenglContext.h" />
     <ClInclude Include="src\COpenglFactory.h" />
     <ClInclude Include="src\COpenglTexture.h" />
+    <ClInclude Include="src\MyApp.h" />
+    <ClInclude Include="src\particles\CParticleFactory.h" />
+    <ClInclude Include="src\particles\CParticleSystem.h" />
+    <ClInclude Include="src\particles\CRectFireParticle.h" />
     <ClInclude Include="src\program\COpenglBaseProgram.hpp" />
     <ClInclude Include="src\program\COpenglBonedProgram.hpp" />
     <ClInclude Include="src\program\COpenglProgram.h" />
     <ClInclude Include="src\program\COpenglProgramFactory.h" />
     <ClInclude Include="src\program\COpenglTexturedProgram.hpp" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="OPengl4.0Vertsion.cpp" />
+    <ClCompile Include="src\COpenglBuffer.cpp" />
+    <ClCompile Include="src\COpenglCanvas.cpp" />
+    <ClCompile Include="src\COpenglContext.cpp" />
+    <ClCompile Include="src\COpenglFactory.cpp" />
+    <ClCompile Include="src\COpenglTexture.cpp" />
+    <ClCompile Include="src\MyApp.cpp" />
+    <ClCompile Include="src\particles\CParticleSystem.cpp" />
+    <ClCompile Include="src\program\COpenglBaseProgram.cpp" />
+    <ClCompile Include="src\program\COpenglProgram.cpp" />
+    <ClCompile Include="src\program\COpenglProgramFactory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

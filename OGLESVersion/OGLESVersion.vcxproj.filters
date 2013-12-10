@@ -22,6 +22,9 @@
     <Filter Include="include">
       <UniqueIdentifier>{a2fcacd8-e4f2-4dcb-93c9-11c8c5fb70ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\particle">
+      <UniqueIdentifier>{a7ae554f-a5f7-4207-a6fd-37f3c039c9b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -66,6 +69,18 @@
     <ClInclude Include="src\COGLESContext.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\particle\CParticleSystem.h">
+      <Filter>src\particle</Filter>
+    </ClInclude>
+    <ClInclude Include="src\particle\CRectFireParticle.h">
+      <Filter>src\particle</Filter>
+    </ClInclude>
+    <ClInclude Include="src\particle\CParticleFactory.h">
+      <Filter>src\particle</Filter>
+    </ClInclude>
+    <ClInclude Include="src\program\COGLESPosColorProgram.hpp">
+      <Filter>src\program</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -100,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="src\COGLESFactory.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\particle\CParticleSystem.cpp">
+      <Filter>src\particle</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

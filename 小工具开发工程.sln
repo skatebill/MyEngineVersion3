@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demos", "demos", "{97D2702B
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyPvrshell", "MyPvrshell\MyPvrshell.vcxproj", "{D97D8F4C-A07B-4DAE-97D6-6BC389CAFA96}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OPengl4.0Vertsion", "OPengl4.0Vertsion\OPengl4.0Vertsion.vcxproj", "{8F761234-7490-45BF-B6CE-E0A3A1E5DB19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -175,6 +177,16 @@ Global
 		{D97D8F4C-A07B-4DAE-97D6-6BC389CAFA96}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{D97D8F4C-A07B-4DAE-97D6-6BC389CAFA96}.Release|Win32.ActiveCfg = Release|Win32
 		{D97D8F4C-A07B-4DAE-97D6-6BC389CAFA96}.Release|Win32.Build.0 = Release|Win32
+		{8F761234-7490-45BF-B6CE-E0A3A1E5DB19}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{8F761234-7490-45BF-B6CE-E0A3A1E5DB19}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{8F761234-7490-45BF-B6CE-E0A3A1E5DB19}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{8F761234-7490-45BF-B6CE-E0A3A1E5DB19}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8F761234-7490-45BF-B6CE-E0A3A1E5DB19}.Debug|Win32.Build.0 = Debug|Win32
+		{8F761234-7490-45BF-B6CE-E0A3A1E5DB19}.Release|Any CPU.ActiveCfg = Release|Win32
+		{8F761234-7490-45BF-B6CE-E0A3A1E5DB19}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{8F761234-7490-45BF-B6CE-E0A3A1E5DB19}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{8F761234-7490-45BF-B6CE-E0A3A1E5DB19}.Release|Win32.ActiveCfg = Release|Win32
+		{8F761234-7490-45BF-B6CE-E0A3A1E5DB19}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -192,6 +204,7 @@ Global
 		{5B6BB893-EA31-4A7E-B022-91A5FF7AFEF4} = {3D808321-1408-4DF1-8254-B37A9B7A61DF}
 		{0F2F2088-32EA-48E8-A78D-2B137B7D4AD2} = {3D808321-1408-4DF1-8254-B37A9B7A61DF}
 		{D973A6C2-3E0F-4CF6-BE9A-3F117D34A4AB} = {3D808321-1408-4DF1-8254-B37A9B7A61DF}
+		{8F761234-7490-45BF-B6CE-E0A3A1E5DB19} = {3D808321-1408-4DF1-8254-B37A9B7A61DF}
 		{D97D8F4C-A07B-4DAE-97D6-6BC389CAFA96} = {97D2702B-BADC-4229-99A8-4EF99D24654D}
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution

@@ -2,6 +2,7 @@
 #include "COGLESBaseProgram.hpp"
 #include "COGLESTexturedProgram.hpp"
 #include "COGLESBonedProgram.hpp"
+#include "COGLESPosColorProgram.hpp"
 namespace xc{
 	namespace drawBasement{
 
@@ -26,6 +27,13 @@ namespace xc{
 			COGLESBonedProgramQ<IBonedProgramQ>* r(new COGLESBonedProgramQ<IBonedProgramQ>);
 			r->initialProgram();
 			return shared_ptr<IBonedProgramQ>(r);
+		}
+		//! 创建快速版本的顶点颜色shader
+		shared_ptr<IPosColorProgramQ> COGLESProgramFactory::createBaseQuickPosColorProgram(){
+			COGLESPosColorProgramQ<IPosColorProgramQ>* r(new COGLESPosColorProgramQ<IPosColorProgramQ>);
+			r->initialProgram();
+			return shared_ptr<IPosColorProgramQ>(r);
+
 		}
 	}
 }

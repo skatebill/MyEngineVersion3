@@ -12,6 +12,10 @@ namespace xc{
 			virtual shared_ptr<IBasedTextureProgramQ> createBaseQuickTextureProgram();
 			//! 创建快速版本的骨骼动画shader
 			virtual shared_ptr<IBonedProgramQ> createBaseQuickBonedProgram();
+			//! 创建快速版本的顶点颜色shader
+			virtual shared_ptr<IPosColorProgramQ> createBaseQuickPosColorProgram(){
+				return 0;
+			}
 
 		};
 	}

@@ -86,6 +86,9 @@
     <ClCompile Include="..\..\..\workspace\ndk-project\pvrshell\jni\MyApp.cpp" />
     <ClCompile Include="..\..\..\workspace\ndk-project\pvrshell\jni\OGLES2IntroducingPVRShell.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\workspace\ndk-project\pvrshell\jni\MyApp.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
